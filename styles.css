@@ -155,10 +155,11 @@ html.dark .titular {
 }
 
 .bajada {
+  /* Una sola línea, igual que el titular: se ajusta al ancho de la pantalla */
   margin-top: 0.5rem;
-  max-width: 44ch;
-  font-size: 1rem;
-  line-height: 1.45;
+  font-size: min(1.1rem, calc((100vw - 2rem) / 28));
+  line-height: 1.4;
+  white-space: nowrap;
   opacity: 0.85;
 }
 
