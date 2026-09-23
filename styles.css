@@ -8,6 +8,13 @@
 :root {
   --senal: #FFC72C;
   --tinta: #141A24;
+
+  /* Azul institucional DGAC (cambia aquí el tono exacto si tienes el manual de marca) */
+  --azul-dgac: #0F3C7A;
+  /* Variante clara del azul para mantener contraste sobre fondo oscuro */
+  --azul-dgac-claro: #9CC2FF;
+  /* Azul oscuro para el titular (modo claro) */
+  --azul-titulo: #0A2A5C;
   --papel: #F3F5F8;
   --asfalto: #1B2330;
   --pista: #262F3D;
@@ -39,7 +46,7 @@ html.dark {
   --warn: #FFD36B;
   --warn-bg: rgba(255, 199, 44, 0.13);
 
-  --foco: #FFC72C;
+  --foco: var(--azul-dgac-claro);
   color-scheme: dark;
 }
 
@@ -66,8 +73,8 @@ body {
   left: -9999px;
   top: 0.5rem;
   z-index: 50;
-  background: var(--tinta);
-  color: var(--senal);
+  background: var(--azul-dgac);
+  color: #FFFFFF;
   padding: 0.6rem 1rem;
   border-radius: 10px;
   font-weight: 700;
@@ -104,27 +111,47 @@ html.dark .cabecera {
   width: 2rem;
   height: 2rem;
   border-radius: 9px;
-  background: var(--tinta);
-  color: var(--senal);
+  background: var(--azul-dgac);
+  color: #FFFFFF;
   font-size: 1.05rem;
   flex: none;
 }
 
 html.dark .marca-icono {
-  background: var(--senal);
+  background: var(--azul-dgac-claro);
   color: var(--tinta);
 }
 
+/* Logo DGAC: placa blanca para que se lea igual en modo claro y oscuro */
+.logo-dgac {
+  display: block;
+  height: 2.75rem;
+  width: auto;
+  max-width: 7.5rem;
+  object-fit: contain;
+  padding: 0.3rem 0.45rem;
+  background: #FFFFFF;
+  border-radius: 10px;
+  flex: none;
+}
+
+.logo-dgac[hidden] {
+  display: none;
+}
+
 .titular {
-  font-size: clamp(1.9rem, 5.5vw + 0.6rem, 3rem);
+  /* Una sola línea: el tamaño se ajusta al ancho de la pantalla
+     (ancho disponible ÷ 18) y se detiene en 2.6rem en pantallas grandes */
+  font-size: min(2.6rem, calc((100vw - 2rem) / 18));
   font-weight: 700;
-  line-height: 1.06;
+  line-height: 1.1;
   letter-spacing: -0.02em;
-  max-width: 15ch;
+  white-space: nowrap;
+  color: var(--azul-titulo);
 }
 
 html.dark .titular {
-  color: var(--senal);
+  color: var(--azul-dgac-claro);
 }
 
 .bajada {
@@ -216,8 +243,8 @@ html.dark .campo-busqueda {
 }
 
 html.dark .campo-busqueda:focus-within {
-  border-color: var(--senal);
-  box-shadow: 0 0 0 4px rgba(255, 199, 44, 0.22);
+  border-color: var(--azul-dgac-claro);
+  box-shadow: 0 0 0 4px rgba(156, 194, 255, 0.22);
 }
 
 .campo-icono {
@@ -308,9 +335,9 @@ html.dark .btn-limpiar {
 }
 
 .chip[aria-pressed="true"] {
-  background: var(--tinta);
-  color: var(--senal);
-  border-color: var(--tinta);
+  background: var(--azul-dgac);
+  color: #FFFFFF;
+  border-color: var(--azul-dgac);
 }
 
 html.dark .chip {
@@ -320,9 +347,9 @@ html.dark .chip {
 }
 
 html.dark .chip[aria-pressed="true"] {
-  background: var(--senal);
+  background: var(--azul-dgac-claro);
   color: var(--tinta);
-  border-color: var(--senal);
+  border-color: var(--azul-dgac-claro);
 }
 
 .chip-n {
@@ -335,7 +362,7 @@ html.dark .chip[aria-pressed="true"] {
 }
 
 .chip[aria-pressed="true"] .chip-n {
-  background: rgba(255, 199, 44, 0.22);
+  background: rgba(255, 255, 255, 0.2);
 }
 
 html.dark .chip .chip-n {
@@ -559,13 +586,13 @@ html.dark .detalle-cuerpo {
   min-height: 46px;
   padding: 0 1.25rem;
   border-radius: 999px;
-  background: var(--tinta);
-  color: var(--senal);
+  background: var(--azul-dgac);
+  color: #FFFFFF;
   font-weight: 700;
 }
 
 html.dark .btn-primario {
-  background: var(--senal);
+  background: var(--azul-dgac-claro);
   color: var(--tinta);
 }
 
@@ -583,11 +610,11 @@ html.dark .pie {
 }
 
 .pie .font-bold {
-  color: var(--tinta);
+  color: var(--azul-dgac);
 }
 
 html.dark .pie .font-bold {
-  color: var(--senal);
+  color: var(--azul-dgac-claro);
 }
 
 /* ---------- Movimiento reducido ---------- */

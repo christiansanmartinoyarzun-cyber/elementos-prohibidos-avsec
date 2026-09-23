@@ -213,7 +213,7 @@ const elementosVuelo = [
     id: 'gas-pimienta',
     nombre: 'Gas pimienta o spray de defensa personal',
     categoria: 'herramientas',
-    icono: '🌶️',
+    icono: '🧯',
     claves: ['gas pimienta', 'spray de defensa', 'gas lacrimogeno', 'defensa personal', 'mace', 'aerosol'],
     mano: 'prohibido',
     bodega: 'prohibido',

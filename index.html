@@ -62,7 +62,15 @@
   <header class="cabecera">
     <div class="max-w-5xl mx-auto px-4 pt-4 flex items-center justify-between gap-3">
       <p class="marca">
-        <span class="marca-icono" aria-hidden="true">✈</span>
+        <!-- Logo oficial: archivo logo.png en la misma carpeta que index.html.
+             Si no está, se muestra el ícono de avión como respaldo. -->
+        <img
+          src="./logo.png"
+          alt="Dirección General de Aeronáutica Civil (DGAC)"
+          class="logo-dgac"
+          onload="document.getElementById('marcaRespaldo').hidden = true;"
+          onerror="this.hidden = true; document.getElementById('marcaRespaldo').hidden = false;">
+        <span id="marcaRespaldo" class="marca-icono" aria-hidden="true" hidden>✈</span>
         <span>Elementos Prohibidos en Vuelos</span>
       </p>
 
