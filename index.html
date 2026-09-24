@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Elementos Prohibidos en Vuelos</title>
-  <meta name="description" content="Consulta rápida de qué puedes llevar en tu equipaje de mano y de bodega, según la Tabla 8.1 de IATA y la normativa DGAC.">
+  <meta name="description" content="Consulta qué puedes llevar en tu equipaje de mano y de bodega, según la Tabla 8-1 del Doc 9284 de la OACI y la normativa DGAC.">
   <meta name="theme-color" content="#FFC72C">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
@@ -13,57 +13,53 @@
   <link rel="manifest" href="./manifest.json">
   <link rel="icon" href="./icon.svg" type="image/svg+xml">
 
-  <!-- Aplica el tema guardado antes de pintar la página (evita parpadeo) -->
+  <!-- Tema e idioma guardados, antes de pintar (evita parpadeo) -->
   <script>
     (function () {
       try {
         var t = localStorage.getItem('tema');
         var oscuro = t === 'oscuro' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
         if (oscuro) document.documentElement.classList.add('dark');
+        var l = localStorage.getItem('epv-lang');
+        if (l === 'en') document.documentElement.lang = 'en';
       } catch (e) {}
     })();
   </script>
 
-  <!-- Tailwind CSS vía CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
       theme: {
         extend: {
-          colors: {
-            senal: '#FFC72C',
-            asfalto: '#1B2330',
-            pista: '#262F3D',
-            tinta: '#141A24',
-            papel: '#F3F5F8'
-          },
-          fontFamily: {
-            sans: ['"Atkinson Hyperlegible"', 'system-ui', '-apple-system', '"Segoe UI"', 'Roboto', 'sans-serif']
-          }
+          colors: { senal: '#FFC72C', asfalto: '#1B2330', pista: '#262F3D', tinta: '#141A24', papel: '#F3F5F8' },
+          fontFamily: { sans: ['"Atkinson Hyperlegible"', 'system-ui', '-apple-system', '"Segoe UI"', 'Roboto', 'sans-serif'] }
         }
       }
     };
   </script>
 
-  <!-- Tipografía: Atkinson Hyperlegible, diseñada para máxima legibilidad -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="./styles.css">
 </head>
 
 <body class="bg-papel text-tinta dark:bg-asfalto dark:text-slate-100 font-sans antialiased min-h-screen flex flex-col">
 
-  <a href="#resultados" class="saltar">Saltar a los resultados</a>
+  <a href="#resultados" class="saltar" data-i18n="saltar">Saltar a los resultados</a>
 
-  <!-- Cabecera tipo señalética aeroportuaria -->
+  <!-- Aviso de vista previa del borrador del mantenedor -->
+  <div id="avisoBorrador" class="aviso-borrador" hidden>
+    <span aria-hidden="true">👁️</span>
+    <span data-i18n="vistaBorrador">Vista previa del borrador del mantenedor (no publicado).</span>
+    <a href="./index.html" data-i18n="salirVista">Salir de la vista previa</a>
+  </div>
+
+  <!-- Cabecera -->
   <header class="cabecera">
     <div class="max-w-5xl mx-auto px-4 pt-4 flex items-center justify-between gap-3">
       <p class="marca">
-        <!-- Logo oficial: archivo logo.png en la misma carpeta que index.html.
-             Si no está, se muestra el ícono de avión como respaldo. -->
         <img
           src="./logo.png"
           alt="Dirección General de Aeronáutica Civil (DGAC)"
@@ -71,27 +67,33 @@
           onload="document.getElementById('marcaRespaldo').hidden = true;"
           onerror="this.hidden = true; document.getElementById('marcaRespaldo').hidden = false;">
         <span id="marcaRespaldo" class="marca-icono" aria-hidden="true" hidden>✈</span>
-        <span>Elementos Prohibidos en Vuelos</span>
+        <span data-i18n="app">Elementos Prohibidos en Vuelos</span>
       </p>
 
-      <button id="toggleTema" type="button" class="tema-toggle" role="switch" aria-checked="false" aria-label="Modo oscuro">
-        <span class="tema-pista" aria-hidden="true">
-          <span class="tema-perilla" id="temaPerilla">☀️</span>
-        </span>
-      </button>
+      <div class="flex items-center gap-2">
+        <div class="idioma" role="group" aria-label="Idioma / Language">
+          <button type="button" class="idioma-btn" data-lang="es" aria-pressed="true" lang="es">ES</button>
+          <button type="button" class="idioma-btn" data-lang="en" aria-pressed="false" lang="en">EN</button>
+        </div>
+        <button id="toggleTema" type="button" class="tema-toggle" role="switch" aria-checked="false" aria-label="Modo oscuro" data-i18n-aria="modoOscuro">
+          <span class="tema-pista" aria-hidden="true">
+            <span class="tema-perilla" id="temaPerilla">☀️</span>
+          </span>
+        </button>
+      </div>
     </div>
 
     <div class="max-w-5xl mx-auto px-4 pt-4 pb-3">
-      <h1 class="titular">¿Qué quieres llevar en tu viaje?</h1>
-      <p class="bajada">Busca un objeto y te decimos si puede viajar contigo.</p>
+      <h1 class="titular" data-i18n="titulo">¿Qué quieres llevar en tu viaje?</h1>
+      <p class="bajada" data-i18n="subtitulo">Busca un objeto y te decimos si puede viajar contigo.</p>
     </div>
   </header>
 
-  <!-- Buscador y filtros (fijos al hacer scroll) -->
+  <!-- Buscador y filtros -->
   <div class="barra-busqueda sticky top-0 z-20">
     <div class="max-w-5xl mx-auto px-4 pt-1">
       <form id="formBusqueda" class="campo-busqueda" role="search" autocomplete="off">
-        <label for="buscador" class="sr-only">Buscar un objeto</label>
+        <label for="buscador" class="sr-only" data-i18n="buscarEtiqueta">Buscar un objeto</label>
         <span class="campo-icono" aria-hidden="true">🔎</span>
         <input
           id="buscador"
@@ -102,65 +104,70 @@
           autocorrect="off"
           autocapitalize="none"
           spellcheck="false"
-          placeholder="Ej.: powerbank, perfume, encendedor">
-        <button type="button" id="limpiarBusqueda" class="btn-limpiar" aria-label="Borrar búsqueda" hidden>✕</button>
+          data-i18n-placeholder="buscarPlaceholder"
+          placeholder="Ej.: power bank, perfume, encendedor">
+        <button type="button" id="limpiarBusqueda" class="btn-limpiar" aria-label="Borrar búsqueda" data-i18n-aria="borrarBusqueda" hidden>✕</button>
       </form>
     </div>
 
-    <nav class="max-w-5xl mx-auto" aria-label="Filtrar por categoría">
-      <div class="chips" id="chips">
-        <button type="button" class="chip" data-categoria="todos" aria-pressed="true">
-          Todos <span class="chip-n" data-n="todos"></span>
-        </button>
-        <button type="button" class="chip" data-categoria="electronica" aria-pressed="false">
-          <span aria-hidden="true">🔋</span> Electrónica y Baterías <span class="chip-n" data-n="electronica"></span>
-        </button>
-        <button type="button" class="chip" data-categoria="liquidos" aria-pressed="false">
-          <span aria-hidden="true">🧴</span> Líquidos y Aseo <span class="chip-n" data-n="liquidos"></span>
-        </button>
-        <button type="button" class="chip" data-categoria="herramientas" aria-pressed="false">
-          <span aria-hidden="true">🔧</span> Herramientas y Armas <span class="chip-n" data-n="herramientas"></span>
-        </button>
-        <button type="button" class="chip" data-categoria="otros" aria-pressed="false">
-          <span aria-hidden="true">📦</span> Otros <span class="chip-n" data-n="otros"></span>
-        </button>
-      </div>
+    <nav class="max-w-5xl mx-auto" aria-label="Filtrar por categoría" data-i18n-aria="filtrarCategoria">
+      <div class="chips" id="chipsCategorias"></div>
     </nav>
+
+    <div class="max-w-5xl mx-auto filtros-estado-fila">
+      <div class="chips chips-estado" id="chipsEstado" role="group" aria-label="Filtrar por dónde puede viajar" data-i18n-aria="filtrarEstado"></div>
+      <button type="button" id="limpiarFiltros" class="btn-texto" data-i18n="limpiarFiltros" hidden>Limpiar filtros</button>
+    </div>
   </div>
 
   <!-- Resultados -->
   <main id="resultados" class="flex-1 w-full max-w-5xl mx-auto px-4 py-5" tabindex="-1">
+
+    <!-- Aviso de la Adenda 1 (power banks) -->
+    <section id="avisoAdenda" class="aviso-adenda" hidden aria-labelledby="avisoAdendaTitulo">
+      <span class="aviso-adenda-icono" aria-hidden="true">🔋</span>
+      <div class="flex-1 min-w-0">
+        <h2 id="avisoAdendaTitulo" class="font-bold" data-i18n="adendaTitulo">Nuevo desde el 27 de marzo de 2026</h2>
+        <p data-i18n="adendaTexto">Máximo 2 power banks por persona, solo en cabina. No se pueden recargar a bordo.</p>
+        <button type="button" id="verPowerBanks" class="btn-texto mt-1" data-i18n="adendaVer">Ver reglas de power banks</button>
+      </div>
+      <button type="button" id="cerrarAdenda" class="btn-limpiar" aria-label="Cerrar aviso" data-i18n-aria="cerrarAviso">✕</button>
+    </section>
+
     <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-2 mb-4">
       <p id="resumen" class="font-bold text-base" aria-live="polite"></p>
-      <p class="leyenda" aria-label="Significado de los iconos">
-        <span><span aria-hidden="true">✅</span> Permitido</span>
-        <span><span aria-hidden="true">⚠️</span> Restringido: con condiciones</span>
-        <span><span aria-hidden="true">❌</span> Prohibido</span>
+      <p class="leyenda">
+        <span><span aria-hidden="true">✅</span> <span data-i18n="permitido">Permitido</span></span>
+        <span><span aria-hidden="true">⚠️</span> <span data-i18n="leyendaRestringido">Restringido: con condiciones</span></span>
+        <span><span aria-hidden="true">❌</span> <span data-i18n="prohibido">Prohibido</span></span>
       </p>
     </div>
+
+    <p id="cargando" class="cargando" data-i18n="cargando">Cargando catálogo…</p>
 
     <ul id="listaResultados" class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3" role="list"></ul>
 
     <section id="sinResultados" class="vacio" hidden aria-labelledby="vacioTitulo">
       <p class="vacio-icono" aria-hidden="true">🧳</p>
-      <h2 id="vacioTitulo" class="text-lg font-bold">No encontramos ese objeto</h2>
-      <p class="mt-1 max-w-prose mx-auto">
-        Prueba con otra palabra, por ejemplo «batería», «perfume» o «cuchillo». Si no aparece, consulta directamente con tu aerolínea antes de viajar.
-      </p>
-      <button type="button" id="verTodos" class="btn-primario mt-4">Ver todos los objetos</button>
+      <h2 id="vacioTitulo" class="text-lg font-bold" data-i18n="vacioTitulo">No encontramos ese objeto</h2>
+      <p class="mt-1 max-w-prose mx-auto" data-i18n="vacioTexto">Prueba con otra palabra, por ejemplo «batería», «perfume» o «cuchillo». Si no aparece, consulta directamente con tu aerolínea antes de viajar.</p>
+      <button type="button" id="verTodos" class="btn-primario mt-4" data-i18n="verTodos">Ver todos los objetos</button>
     </section>
   </main>
 
   <!-- Pie de página -->
   <footer class="pie">
     <div class="max-w-5xl mx-auto px-4 py-6">
-      <p class="max-w-prose">
-        Esta herramienta es una guía referencial basada en la Tabla 8.1 de IATA y normativas DGAC. Ante la duda, consulta siempre con tu aerolínea.
-      </p>
-      <p class="mt-3 font-bold">Proyecto DASA - ETA</p>
+      <p class="max-w-prose" data-i18n="legal">Esta herramienta es una guía referencial basada en la Tabla 8-1 del Doc 9284 de la OACI (Ed. 2025–2026 y Adenda 1) y normativas DGAC. Ante la duda, consulta siempre con tu aerolínea.</p>
+      <p class="mt-2 text-xs" id="normativaVigente"></p>
+      <div class="mt-3 flex flex-wrap items-center justify-between gap-2">
+        <p class="font-bold">Proyecto DASA - ETA</p>
+        <a href="./admin.html" class="enlace-admin" data-i18n="mantenedor">⚙️ Mantenedor</a>
+      </div>
     </div>
   </footer>
 
-  <script src="./script.js" defer></script>
+  <script src="./data.js"></script>
+  <script src="./script.js"></script>
 </body>
 </html>

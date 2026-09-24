@@ -1,0 +1,2406 @@
+{
+  "esquema": 2,
+  "actualizado": "2026-09-23",
+  "normativa": {
+    "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1 y Adenda 1 (vigente desde el 27/3/2026).",
+    "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1 and Addendum 1 (applicable from 27 March 2026)."
+  },
+  "elementos": [
+    {
+      "id": "power-bank",
+      "categoria": "electronica",
+      "icono": "🔋",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Banco de energía (power bank)",
+        "en": "Power bank"
+      },
+      "claves": {
+        "es": [
+          "power bank",
+          "powerbank",
+          "banco de energia",
+          "bateria externa",
+          "cargador portatil",
+          "mah",
+          "celular"
+        ],
+        "en": [
+          "power bank",
+          "portable charger",
+          "external battery",
+          "battery pack",
+          "mah",
+          "phone"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "prohibido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Solo en cabina, hasta 100 Wh y máximo 2 por persona. No se pueden recargar a bordo.",
+        "en": "Cabin only, up to 100 Wh and no more than 2 per person. They may not be recharged on board."
+      },
+      "detalle": {
+        "es": [
+          "Capacidad máxima por unidad: 100 Wh (ion litio) o 2 g de litio (metal litio). Entre 100 y 160 Wh requiere aprobación de la aerolínea.",
+          "No pueden transportarse más de 2 bancos de energía por persona.",
+          "Deben ir en el equipaje de mano. Están prohibidos en el equipaje facturado (bodega).",
+          "No deben recargarse mientras estén a bordo y no deberían usarse para recargar otros aparatos durante el vuelo.",
+          "Cada uno debe ir protegido contra cortocircuitos cuando no se use: en su embalaje original, con cinta adhesiva sobre los bornes o en una bolsa o funda individual.",
+          "Las aerolíneas pueden prohibir su transporte: consulta con tu aerolínea antes de viajar.",
+          "Para calcular los Wh: mAh × voltaje ÷ 1000 (ej.: 20.000 mAh a 3,7 V = 74 Wh)."
+        ],
+        "en": [
+          "Maximum per unit: 100 Wh (lithium ion) or 2 g of lithium (lithium metal). Between 100 and 160 Wh requires airline approval.",
+          "No more than 2 power banks may be carried per person.",
+          "They must be carried in cabin baggage. They are forbidden in checked baggage.",
+          "They must not be recharged while on board and should not be used to recharge other devices during the flight.",
+          "Each one must be protected from short circuit when not in use: in its original retail packaging, with tape over the terminals, or in an individual bag or pouch.",
+          "Airlines may forbid their carriage: check with your airline before travelling.",
+          "To calculate Wh: mAh × voltage ÷ 1000 (e.g. 20,000 mAh at 3.7 V = 74 Wh)."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 1 b), c) e i), modificado por la Adenda 1 (vigente desde el 27/3/2026).",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 1 b), c) and i), as amended by Addendum 1 (applicable from 27 March 2026)."
+      }
+    },
+    {
+      "id": "bateria-100-160",
+      "categoria": "electronica",
+      "icono": "🔋",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Batería de ion litio de más de 100 Wh y hasta 160 Wh",
+        "en": "Lithium ion battery over 100 Wh and up to 160 Wh"
+      },
+      "claves": {
+        "es": [
+          "bateria grande",
+          "bateria de camara",
+          "bateria de dron",
+          "drone",
+          "160 wh",
+          "power bank grande",
+          "litio"
+        ],
+        "en": [
+          "large battery",
+          "camera battery",
+          "drone battery",
+          "160 wh",
+          "large power bank",
+          "lithium"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "restringido",
+      "aprobacion": true,
+      "limite": {
+        "es": "Requiere aprobación de la aerolínea. Si es de repuesto, solo en cabina y máximo 2 por persona.",
+        "en": "Requires airline approval. If it is a spare, cabin only and no more than 2 per person."
+      },
+      "detalle": {
+        "es": [
+          "Son típicas de equipos profesionales: cámaras de video, drones o notebooks de alto rendimiento.",
+          "Instalada en un aparato: preferentemente en cabina. Si va en bodega, el aparato debe ir completamente apagado y protegido contra daños.",
+          "De repuesto: solo en equipaje de mano, máximo 2 por persona y cada una protegida contra cortocircuitos.",
+          "Si es un banco de energía, además rigen sus reglas: máximo 2 por persona y sin recargarlo a bordo.",
+          "Las aerolíneas pueden prohibir su transporte."
+        ],
+        "en": [
+          "Typical of professional equipment: video cameras, drones or high-performance laptops.",
+          "Installed in a device: preferably in the cabin. If checked, the device must be completely switched off and protected from damage.",
+          "As a spare: cabin baggage only, no more than 2 per person, each protected from short circuit.",
+          "If it is a power bank, its own rules also apply: no more than 2 per person and no recharging on board.",
+          "Airlines may forbid their carriage."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 1 c), e), f) y h), modificado por la Adenda 1 (vigente desde el 27/3/2026).",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 1 c), e), f) and h), as amended by Addendum 1 (applicable from 27 March 2026)."
+      }
+    },
+    {
+      "id": "baterias-repuesto",
+      "categoria": "electronica",
+      "icono": "🪫",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Baterías de litio de repuesto (cámara, notebook, dron)",
+        "en": "Spare lithium batteries (camera, laptop, drone)"
+      },
+      "claves": {
+        "es": [
+          "bateria de repuesto",
+          "bateria suelta",
+          "bateria de litio",
+          "pila de litio",
+          "bateria camara",
+          "bateria notebook"
+        ],
+        "en": [
+          "spare battery",
+          "loose battery",
+          "lithium battery",
+          "lithium cell",
+          "camera battery",
+          "laptop battery"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "prohibido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Solo en cabina, cada una protegida contra cortocircuitos. Máximo 2 por persona.",
+        "en": "Cabin only, each protected from short circuit. No more than 2 per person."
+      },
+      "detalle": {
+        "es": [
+          "Hasta 100 Wh (ion litio) o 2 g de litio (metal litio) por batería.",
+          "Deben transportarse en el equipaje de mano. Están prohibidas en el equipaje facturado.",
+          "No pueden transportarse más de 2 baterías de repuesto por persona.",
+          "Deben ir individualmente protegidas: en su embalaje original, con cinta adhesiva sobre los bornes o en una bolsa plástica o funda protectora.",
+          "Las aerolíneas pueden prohibir su transporte."
+        ],
+        "en": [
+          "Up to 100 Wh (lithium ion) or 2 g of lithium (lithium metal) per battery.",
+          "They must be carried in cabin baggage. They are forbidden in checked baggage.",
+          "No more than 2 spare batteries may be carried per person.",
+          "Each must be individually protected: in its original retail packaging, with tape over the terminals, or in a plastic bag or protective pouch.",
+          "Airlines may forbid their carriage."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 1 b), e) y h), modificado por la Adenda 1 (vigente desde el 27/3/2026); criterio de cantidad según orientación DGAC para pasajeros.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 1 b), e) and h), as amended by Addendum 1 (applicable from 27 March 2026); quantity criterion per DGAC passenger guidance."
+      }
+    },
+    {
+      "id": "dispositivos-electronicos",
+      "categoria": "electronica",
+      "icono": "💻",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Celular, notebook, tablet o cámara",
+        "en": "Phone, laptop, tablet or camera"
+      },
+      "claves": {
+        "es": [
+          "celular",
+          "telefono",
+          "notebook",
+          "computador",
+          "laptop",
+          "tablet",
+          "ipad",
+          "camara",
+          "consola",
+          "audifonos",
+          "reloj inteligente"
+        ],
+        "en": [
+          "phone",
+          "mobile",
+          "cell phone",
+          "laptop",
+          "computer",
+          "notebook",
+          "tablet",
+          "camera",
+          "console",
+          "headphones",
+          "smartwatch"
+        ]
+      },
+      "mano": "permitido",
+      "bodega": "restringido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Mejor en cabina. En bodega: completamente apagado (no en reposo) y protegido contra daños.",
+        "en": "Best in the cabin. In checked baggage: completely switched off (not in sleep mode) and protected from damage."
+      },
+      "detalle": {
+        "es": [
+          "Sus baterías no deben superar 100 Wh (ion litio) o 2 g de litio (metal litio).",
+          "Toma medidas para evitar que se enciendan accidentalmente y protégelos contra daños.",
+          "Deberían transportarse en el equipaje de mano.",
+          "Si van en equipaje facturado deben ir completamente apagados, no en modo de reposo ni hibernación. La Tabla 8-1 asocia a este caso los criterios de 0,3 g de litio (metal litio) o 2,7 Wh (ion litio) por aparato: ante la duda, llévalos en cabina.",
+          "Las aerolíneas pueden prohibir su transporte."
+        ],
+        "en": [
+          "Their batteries must not exceed 100 Wh (lithium ion) or 2 g of lithium (lithium metal).",
+          "Take measures to prevent accidental activation and protect them from damage.",
+          "They should be carried in cabin baggage.",
+          "If checked, they must be completely switched off, not in sleep or hibernation mode. Table 8-1 links this case to criteria of 0.3 g of lithium (lithium metal) or 2.7 Wh (lithium ion) per device: if in doubt, carry them in the cabin.",
+          "Airlines may forbid their carriage."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 1 b) y f), modificado por la Adenda 1 (vigente desde el 27/3/2026).",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 1 b) and f), as amended by Addendum 1 (applicable from 27 March 2026)."
+      }
+    },
+    {
+      "id": "vaper",
+      "categoria": "electronica",
+      "icono": "💨",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Cigarrillo electrónico o vaporizador (vaper)",
+        "en": "E-cigarette or vaporiser (vape)"
+      },
+      "claves": {
+        "es": [
+          "vaper",
+          "vape",
+          "vapeador",
+          "vaporizador",
+          "pod",
+          "cigarrillo electronico",
+          "pipa electronica",
+          "nicotina",
+          "iqos"
+        ],
+        "en": [
+          "vape",
+          "vaper",
+          "vaporiser",
+          "vaporizer",
+          "pod",
+          "e-cigarette",
+          "electronic cigarette",
+          "e-pipe",
+          "nicotine"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "prohibido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Solo en cabina. Ni el aparato ni sus baterías pueden recargarse a bordo.",
+        "en": "Cabin only. Neither the device nor its batteries may be recharged on board."
+      },
+      "detalle": {
+        "es": [
+          "Incluye cigarrillos y cigarros electrónicos, pipas electrónicas, vaporizadores personales y sistemas electrónicos de administración de nicotina.",
+          "Están prohibidos en el equipaje facturado.",
+          "Sus baterías de litio deben cumplir los límites de 100 Wh o 2 g de litio, y las de repuesto deben ir protegidas contra cortocircuitos.",
+          "Deben tomarse medidas para impedir la activación accidental del elemento calefactor.",
+          "El líquido de recarga sigue la regla de líquidos de 100 ml en cabina."
+        ],
+        "en": [
+          "Includes electronic cigarettes and cigars, e-pipes, personal vaporisers and electronic nicotine delivery systems.",
+          "They are forbidden in checked baggage.",
+          "Their lithium batteries must meet the 100 Wh or 2 g lithium limits, and spares must be protected from short circuit.",
+          "Measures must be taken to prevent accidental activation of the heating element.",
+          "Refill liquid follows the 100 ml cabin liquids rule."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 3.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 3."
+      }
+    },
+    {
+      "id": "maleta-inteligente",
+      "categoria": "electronica",
+      "icono": "🧳",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Maleta inteligente (smart bag) con batería de litio",
+        "en": "Smart bag with lithium battery"
+      },
+      "claves": {
+        "es": [
+          "smart bag",
+          "maleta inteligente",
+          "maleta con bateria",
+          "maleta con cargador",
+          "maleta usb",
+          "equipaje inteligente"
+        ],
+        "en": [
+          "smart bag",
+          "smart luggage",
+          "suitcase with battery",
+          "suitcase charger",
+          "usb suitcase"
+        ]
+      },
+      "mano": "permitido",
+      "bodega": "restringido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Si la documentas, retira la batería y llévala contigo en cabina.",
+        "en": "If you check it in, remove the battery and carry it with you in the cabin."
+      },
+      "detalle": {
+        "es": [
+          "Si sus baterías superan 0,3 g de litio (metal litio) o 2,7 Wh (ion litio), la maleta debe ir como equipaje de mano, salvo que se extraigan las baterías.",
+          "La batería extraída viaja como batería de repuesto: en cabina y protegida contra cortocircuitos.",
+          "Si en la puerta de embarque te piden enviar tu maleta a bodega, retira antes la batería."
+        ],
+        "en": [
+          "If its batteries exceed 0.3 g of lithium (lithium metal) or 2.7 Wh (lithium ion), the bag must travel as cabin baggage unless the batteries are removed.",
+          "The removed battery travels as a spare battery: in the cabin and protected from short circuit.",
+          "If you are asked to check your bag at the gate, remove the battery first."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 1 h) y j), modificado por la Adenda 1 (vigente desde el 27/3/2026).",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 1 h) and j), as amended by Addendum 1 (applicable from 27 March 2026)."
+      }
+    },
+    {
+      "id": "aparatos-calor",
+      "categoria": "electronica",
+      "icono": "🔦",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Aparatos que pueden generar calor extremo (linternas de buceo, soldadores portátiles)",
+        "en": "Devices capable of generating extreme heat (diving lamps, portable soldering irons)"
+      },
+      "claves": {
+        "es": [
+          "linterna de buceo",
+          "soldador",
+          "cautin",
+          "elemento calefactor",
+          "calor extremo"
+        ],
+        "en": [
+          "diving lamp",
+          "dive torch",
+          "soldering iron",
+          "heating element",
+          "extreme heat"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "restringido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Retira la batería o el elemento calefactor antes de empacar.",
+        "en": "Remove the battery or the heating element before packing."
+      },
+      "detalle": {
+        "es": [
+          "Aplica a aparatos a batería capaces de generar calor extremo que pueda causar un incendio si se activan.",
+          "Debe aislarse el elemento calefactor o la batería, extrayendo el componente del aparato.",
+          "Las baterías de litio extraídas siguen las reglas de baterías de repuesto: solo en cabina y protegidas."
+        ],
+        "en": [
+          "Applies to battery-powered devices capable of generating extreme heat that could cause a fire if activated.",
+          "The heating element or the battery must be isolated by removing the component from the device.",
+          "Removed lithium batteries follow spare battery rules: cabin only and protected."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 1 g) (modificado por la Adenda 1) e ítem 2 c).",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 1 g) (as amended by Addendum 1) and item 2 c)."
+      }
+    },
+    {
+      "id": "pilas-comunes",
+      "categoria": "electronica",
+      "icono": "🔌",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Pilas alcalinas y recargables de níquel (AA, AAA, NiMH)",
+        "en": "Alkaline and nickel rechargeable batteries (AA, AAA, NiMH)"
+      },
+      "claves": {
+        "es": [
+          "pilas",
+          "pila aa",
+          "pila aaa",
+          "alcalinas",
+          "recargables",
+          "nimh",
+          "baterias secas"
+        ],
+        "en": [
+          "batteries",
+          "aa",
+          "aaa",
+          "alkaline",
+          "rechargeable",
+          "nimh",
+          "dry cells"
+        ]
+      },
+      "mano": "permitido",
+      "bodega": "permitido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Permitidas en cabina y bodega. Protege los bornes de las pilas sueltas.",
+        "en": "Allowed in cabin and checked baggage. Protect the terminals of loose batteries."
+      },
+      "detalle": {
+        "es": [
+          "Incluye baterías secas y de níquel-hidruro metálico que cumplen las Disposiciones especiales A123 o A199.",
+          "Las baterías de litio tienen reglas propias: búscalas por separado."
+        ],
+        "en": [
+          "Includes dry batteries and nickel-metal hydride batteries meeting Special Provisions A123 or A199.",
+          "Lithium batteries have their own rules: search for them separately."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 2 b).",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 2 b)."
+      }
+    },
+    {
+      "id": "baterias-inderramables",
+      "categoria": "electronica",
+      "icono": "🔋",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Baterías inderramables de electrolito líquido (tipo gel o AGM)",
+        "en": "Non-spillable wet batteries (gel or AGM type)"
+      },
+      "claves": {
+        "es": [
+          "bateria de gel",
+          "agm",
+          "acumulador",
+          "bateria inderramable",
+          "bateria sellada"
+        ],
+        "en": [
+          "gel battery",
+          "agm",
+          "accumulator",
+          "non-spillable battery",
+          "sealed battery"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "restringido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Máximo 12 V y 100 Wh cada una; hasta 2 de repuesto por persona.",
+        "en": "Maximum 12 V and 100 Wh each; up to 2 spares per person."
+      },
+      "detalle": {
+        "es": [
+          "Deben cumplir la Disposición especial A67.",
+          "Cada acumulador debe protegerse contra cortocircuitos, aislando los bornes expuestos.",
+          "Si van instaladas en un equipo, protégelo contra activación accidental o desconecta la batería y aísla sus bornes."
+        ],
+        "en": [
+          "They must meet Special Provision A67.",
+          "Each battery must be protected from short circuit by insulating exposed terminals.",
+          "If installed in equipment, protect it from accidental activation or disconnect the battery and insulate its terminals."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 2 a).",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 2 a)."
+      }
+    },
+    {
+      "id": "pila-combustible",
+      "categoria": "electronica",
+      "icono": "⚗️",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Cargador de pila de combustible y cartuchos de repuesto",
+        "en": "Fuel cell charger and spare cartridges"
+      },
+      "claves": {
+        "es": [
+          "pila de combustible",
+          "cartucho de combustible",
+          "cargador de hidrogeno",
+          "fuel cell"
+        ],
+        "en": [
+          "fuel cell",
+          "fuel cell cartridge",
+          "hydrogen charger"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "restringido",
+      "aprobacion": false,
+      "limite": {
+        "es": "La pila con combustible, solo en cabina. Máximo 2 cartuchos de repuesto por pasajero.",
+        "en": "A fuel cell containing fuel, cabin only. No more than 2 spare cartridges per passenger."
+      },
+      "detalle": {
+        "es": [
+          "Cantidad máxima por pila o cartucho: 200 ml (líquidos), 200 g (sólidos) o 120 ml de gas licuado (200 ml si son metálicos).",
+          "No se permite rellenarlas a bordo, salvo la instalación de un cartucho de repuesto.",
+          "Deben cumplir la norma CEI 62282-6-100 y llevar la marca \"APROBADO PARA SU TRANSPORTE EN LA CABINA DE LA AERONAVE ÚNICAMENTE\".",
+          "Los cartuchos de repuesto pueden ir en cabina o en bodega."
+        ],
+        "en": [
+          "Maximum per fuel cell or cartridge: 200 ml (liquids), 200 g (solids) or 120 ml of liquefied gas (200 ml if metallic).",
+          "Refilling on board is not permitted, except to install a spare cartridge.",
+          "They must meet standard IEC 62282-6-100 and bear the marking \"APPROVED FOR CARRIAGE IN AIRCRAFT CABIN ONLY\".",
+          "Spare cartridges may travel in the cabin or in checked baggage."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 8.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 8."
+      }
+    },
+    {
+      "id": "bateria-mas-160",
+      "categoria": "electronica",
+      "icono": "⚡",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Batería de litio de más de 160 Wh (estación de energía, scooter o bicicleta eléctrica)",
+        "en": "Lithium battery over 160 Wh (power station, e-scooter or e-bike)"
+      },
+      "claves": {
+        "es": [
+          "estacion de energia",
+          "power station",
+          "bateria scooter",
+          "bateria bicicleta electrica",
+          "bateria grande",
+          "mas de 160 wh"
+        ],
+        "en": [
+          "power station",
+          "e-scooter battery",
+          "e-bike battery",
+          "large battery",
+          "over 160 wh"
+        ]
+      },
+      "mano": "prohibido",
+      "bodega": "prohibido",
+      "aprobacion": null,
+      "limite": {
+        "es": "No puede viajar como equipaje de pasajero.",
+        "en": "It cannot travel as passenger baggage."
+      },
+      "detalle": {
+        "es": [
+          "La Tabla 8-1 solo autoriza baterías de ion litio de hasta 160 Wh (sobre 100 Wh, con aprobación de la aerolínea).",
+          "Excepción: las baterías de sillas de ruedas y ayudas motrices tienen reglas propias.",
+          "Para enviarla debe usarse carga aérea conforme a la reglamentación de mercancías peligrosas."
+        ],
+        "en": [
+          "Table 8-1 only allows lithium ion batteries up to 160 Wh (above 100 Wh, with airline approval).",
+          "Exception: wheelchair and mobility aid batteries have their own rules.",
+          "To ship it, air cargo must be used under the dangerous goods regulations."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 1 b) y c), modificado por la Adenda 1 (vigente desde el 27/3/2026).",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 1 b) and c), as amended by Addendum 1 (applicable from 27 March 2026)."
+      }
+    },
+    {
+      "id": "liquidos-100ml",
+      "categoria": "liquidos",
+      "icono": "💧",
+      "origen": "avsec",
+      "nombre": {
+        "es": "Líquidos, geles y cremas (agua, shampoo, cremas, pasta dental)",
+        "en": "Liquids, gels and creams (water, shampoo, lotions, toothpaste)"
+      },
+      "claves": {
+        "es": [
+          "liquido",
+          "liquidos",
+          "gel",
+          "crema",
+          "shampoo",
+          "agua",
+          "jugo",
+          "pasta de dientes",
+          "maquillaje",
+          "bloqueador",
+          "100 ml"
+        ],
+        "en": [
+          "liquid",
+          "liquids",
+          "gel",
+          "cream",
+          "lotion",
+          "shampoo",
+          "water",
+          "juice",
+          "toothpaste",
+          "makeup",
+          "sunscreen",
+          "100 ml"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "permitido",
+      "aprobacion": false,
+      "limite": {
+        "es": "En cabina: envases de hasta 100 ml, todos en una bolsa transparente de 1 litro.",
+        "en": "In the cabin: containers of up to 100 ml, all in one transparent 1-litre bag."
+      },
+      "detalle": {
+        "es": [
+          "Es una regla del control de seguridad, no de mercancías peligrosas.",
+          "Excepciones: medicamentos y alimentos para bebés en la cantidad necesaria para el viaje; pueden pedirte respaldo.",
+          "Las compras en tiendas libres de impuestos deben ir en bolsa sellada con su comprobante."
+        ],
+        "en": [
+          "This is a security screening rule, not a dangerous goods rule.",
+          "Exceptions: medicines and baby food in the quantity needed for the trip; you may be asked for proof.",
+          "Duty-free purchases must be kept in a sealed bag with the receipt."
+        ]
+      },
+      "fuente": {
+        "es": "Seguridad de la aviación (AVSEC), DGAC: control de seguridad de pasajeros y equipaje de mano.",
+        "en": "Aviation security (AVSEC), DGAC: passenger and cabin baggage screening."
+      }
+    },
+    {
+      "id": "articulos-tocador",
+      "categoria": "liquidos",
+      "icono": "🧴",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Artículos de tocador y aerosoles (perfume, desodorante, laca, espuma de afeitar)",
+        "en": "Toiletries and aerosols (perfume, deodorant, hairspray, shaving foam)"
+      },
+      "claves": {
+        "es": [
+          "aerosol",
+          "spray",
+          "perfume",
+          "colonia",
+          "desodorante",
+          "laca",
+          "espuma de afeitar",
+          "fijador",
+          "tocador"
+        ],
+        "en": [
+          "aerosol",
+          "spray",
+          "perfume",
+          "cologne",
+          "deodorant",
+          "hairspray",
+          "shaving foam",
+          "toiletries"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "restringido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Cada envase hasta 0,5 kg o 0,5 L; en total 2 kg o 2 L por persona. En cabina, envases de hasta 100 ml.",
+        "en": "Each item up to 0.5 kg or 0.5 L; 2 kg or 2 L in total per person. In the cabin, containers of up to 100 ml."
+      },
+      "detalle": {
+        "es": [
+          "Incluye artículos medicinales y de tocador (también en aerosol) y aerosoles de la División 2.2 sin peligro secundario.",
+          "Las válvulas de los aerosoles deben ir protegidas con una tapa u otro medio que impida la liberación del contenido.",
+          "Los aerosoles inflamables que no sean de tocador ni medicinales (pintura en spray, insecticida, lubricante) no están autorizados.",
+          "En cabina, además, aplica la regla de líquidos de 100 ml."
+        ],
+        "en": [
+          "Includes medicinal and toilet articles (including aerosols) and Division 2.2 aerosols with no subsidiary hazard.",
+          "Aerosol release valves must be protected by a cap or other means to prevent release of the contents.",
+          "Flammable aerosols that are not toiletries or medicines (spray paint, insecticide, lubricant) are not permitted.",
+          "In the cabin, the 100 ml liquids rule also applies."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 17.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 17."
+      }
+    },
+    {
+      "id": "alcohol-24-70",
+      "categoria": "liquidos",
+      "icono": "🍾",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Bebidas alcohólicas de más de 24% y menos de 70% (pisco, whisky, ron)",
+        "en": "Alcoholic beverages over 24% and under 70% (pisco, whisky, rum)"
+      },
+      "claves": {
+        "es": [
+          "alcohol",
+          "licor",
+          "pisco",
+          "whisky",
+          "ron",
+          "vodka",
+          "tequila",
+          "gin",
+          "destilado",
+          "botella"
+        ],
+        "en": [
+          "alcohol",
+          "liquor",
+          "spirits",
+          "pisco",
+          "whisky",
+          "rum",
+          "vodka",
+          "tequila",
+          "gin",
+          "bottle"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "restringido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Máximo 5 litros por persona, en envases de venta al detalle. En cabina, envases de hasta 100 ml.",
+        "en": "Maximum 5 litres per person, in retail packaging. In the cabin, containers of up to 100 ml."
+      },
+      "detalle": {
+        "es": [
+          "Deben ir en embalajes de venta al detalle (envase comercial).",
+          "Cantidad neta total: no más de 5 L por persona.",
+          "En cabina aplica la regla de líquidos de 100 ml; las compras en tiendas libres de impuestos siguen sus propias condiciones."
+        ],
+        "en": [
+          "They must be in retail packaging.",
+          "Total net quantity: no more than 5 L per person.",
+          "In the cabin the 100 ml liquids rule applies; duty-free purchases follow their own conditions."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 6.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 6."
+      }
+    },
+    {
+      "id": "alcohol-menos-24",
+      "categoria": "liquidos",
+      "icono": "🍷",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Vino, cerveza y bebidas con menos de 24% de alcohol",
+        "en": "Wine, beer and beverages under 24% alcohol"
+      },
+      "claves": {
+        "es": [
+          "vino",
+          "cerveza",
+          "chicha",
+          "espumante",
+          "sidra",
+          "alcohol"
+        ],
+        "en": [
+          "wine",
+          "beer",
+          "sparkling wine",
+          "cider",
+          "alcohol"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "permitido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Sin restricción como mercancía peligrosa. En cabina, envases de hasta 100 ml.",
+        "en": "Not restricted as dangerous goods. In the cabin, containers of up to 100 ml."
+      },
+      "detalle": {
+        "es": [
+          "La Tabla 8-1 indica que las bebidas con menos de 24% de alcohol no están sujetas a ninguna restricción.",
+          "En cabina aplica la regla de líquidos del control de seguridad.",
+          "Revisa las franquicias de aduana del país de destino."
+        ],
+        "en": [
+          "Table 8-1 states that beverages under 24% alcohol are not subject to any restriction.",
+          "In the cabin the security screening liquids rule applies.",
+          "Check the customs allowances of your destination country."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 6 (nota).",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 6 (note)."
+      }
+    },
+    {
+      "id": "alcohol-mas-70",
+      "categoria": "liquidos",
+      "icono": "🚫",
+      "origen": "no_listado",
+      "nombre": {
+        "es": "Bebidas alcohólicas de 70% o más (alcohol de 96°, licores de muy alta graduación)",
+        "en": "Alcoholic beverages of 70% or more (96% alcohol, very high-proof spirits)"
+      },
+      "claves": {
+        "es": [
+          "alcohol puro",
+          "alcohol 96",
+          "alcohol etilico",
+          "licor fuerte",
+          "absenta"
+        ],
+        "en": [
+          "pure alcohol",
+          "rectified spirit",
+          "ethanol",
+          "high proof",
+          "absinthe"
+        ]
+      },
+      "mano": "prohibido",
+      "bodega": "prohibido",
+      "aprobacion": null,
+      "limite": {
+        "es": "No puede viajar en ningún equipaje.",
+        "en": "It cannot travel in any baggage."
+      },
+      "detalle": {
+        "es": [
+          "La Tabla 8-1 solo autoriza bebidas alcohólicas de más de 24% y menos de 70% de alcohol.",
+          "Revisa la etiqueta antes de empacar."
+        ],
+        "en": [
+          "Table 8-1 only allows alcoholic beverages over 24% and under 70% alcohol.",
+          "Check the label before packing."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284, Parte 8: no figura en la Tabla 8-1, por lo que no está autorizado como equipaje de pasajero.",
+        "en": "ICAO Doc 9284, Part 8: not listed in Table 8-1, therefore not permitted in passenger baggage."
+      }
+    },
+    {
+      "id": "cuchillos",
+      "categoria": "cortopunzantes",
+      "icono": "🔪",
+      "origen": "avsec",
+      "nombre": {
+        "es": "Cuchillos, navajas y cortaplumas",
+        "en": "Knives, blades and pocket knives"
+      },
+      "claves": {
+        "es": [
+          "cuchillo",
+          "navaja",
+          "cortaplumas",
+          "machete",
+          "multiherramienta",
+          "cuchillo cocina"
+        ],
+        "en": [
+          "knife",
+          "blade",
+          "pocket knife",
+          "penknife",
+          "machete",
+          "multitool"
+        ]
+      },
+      "mano": "prohibido",
+      "bodega": "permitido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Nunca en cabina. En bodega, bien envueltos.",
+        "en": "Never in the cabin. In checked baggage, well wrapped."
+      },
+      "detalle": {
+        "es": [
+          "Envuélvelos para que no hieran a quien revise el equipaje.",
+          "La decisión final en el control la toma el personal de seguridad."
+        ],
+        "en": [
+          "Wrap them so they cannot injure baggage screeners.",
+          "The final decision at screening rests with security staff."
+        ]
+      },
+      "fuente": {
+        "es": "Seguridad de la aviación (AVSEC), DGAC: control de seguridad de pasajeros y equipaje de mano.",
+        "en": "Aviation security (AVSEC), DGAC: passenger and cabin baggage screening."
+      }
+    },
+    {
+      "id": "cortacartones",
+      "categoria": "cortopunzantes",
+      "icono": "🪒",
+      "origen": "avsec",
+      "nombre": {
+        "es": "Cortacartones, hojas de afeitar sueltas y bisturís",
+        "en": "Box cutters, loose razor blades and scalpels"
+      },
+      "claves": {
+        "es": [
+          "cortacartones",
+          "cuchillo cartonero",
+          "hoja de afeitar",
+          "gillette",
+          "bisturi",
+          "cutter"
+        ],
+        "en": [
+          "box cutter",
+          "utility knife",
+          "razor blade",
+          "scalpel",
+          "cutter"
+        ]
+      },
+      "mano": "prohibido",
+      "bodega": "permitido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Nunca en cabina. En bodega, con las hojas protegidas.",
+        "en": "Never in the cabin. In checked baggage, with blades protected."
+      },
+      "detalle": {
+        "es": [
+          "Las máquinas de afeitar con cartucho o desechables suelen aceptarse en cabina."
+        ],
+        "en": [
+          "Cartridge or disposable razors are usually accepted in the cabin."
+        ]
+      },
+      "fuente": {
+        "es": "Seguridad de la aviación (AVSEC), DGAC: control de seguridad de pasajeros y equipaje de mano.",
+        "en": "Aviation security (AVSEC), DGAC: passenger and cabin baggage screening."
+      }
+    },
+    {
+      "id": "tijeras",
+      "categoria": "cortopunzantes",
+      "icono": "✂️",
+      "origen": "avsec",
+      "nombre": {
+        "es": "Tijeras",
+        "en": "Scissors"
+      },
+      "claves": {
+        "es": [
+          "tijeras",
+          "tijera de uñas",
+          "tijera escolar"
+        ],
+        "en": [
+          "scissors",
+          "nail scissors"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "permitido",
+      "aprobacion": false,
+      "limite": {
+        "es": "En cabina solo con hojas de hasta 6 cm. Las más grandes, en bodega.",
+        "en": "In the cabin only with blades up to 6 cm. Larger ones in checked baggage."
+      },
+      "detalle": {
+        "es": [
+          "La hoja se mide desde el punto de unión (eje) hasta la punta."
+        ],
+        "en": [
+          "The blade is measured from the pivot point to the tip."
+        ]
+      },
+      "fuente": {
+        "es": "Seguridad de la aviación (AVSEC), DGAC: control de seguridad de pasajeros y equipaje de mano.",
+        "en": "Aviation security (AVSEC), DGAC: passenger and cabin baggage screening."
+      }
+    },
+    {
+      "id": "herramientas",
+      "categoria": "cortopunzantes",
+      "icono": "🔧",
+      "origen": "avsec",
+      "nombre": {
+        "es": "Herramientas (destornilladores, llaves, alicates, martillos)",
+        "en": "Tools (screwdrivers, wrenches, pliers, hammers)"
+      },
+      "claves": {
+        "es": [
+          "herramienta",
+          "destornillador",
+          "llave",
+          "alicate",
+          "martillo",
+          "taladro",
+          "sierra",
+          "napoleon",
+          "barreta"
+        ],
+        "en": [
+          "tool",
+          "screwdriver",
+          "wrench",
+          "spanner",
+          "pliers",
+          "hammer",
+          "drill",
+          "saw",
+          "crowbar"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "permitido",
+      "aprobacion": false,
+      "limite": {
+        "es": "En cabina solo herramientas de hasta 6 cm. Martillos, taladros, sierras y barretas, siempre en bodega.",
+        "en": "In the cabin only tools up to 6 cm. Hammers, drills, saws and crowbars always in checked baggage."
+      },
+      "detalle": {
+        "es": [
+          "La decisión final la toma el personal de seguridad en el control.",
+          "Si la herramienta es a batería, la batería de repuesto va en cabina y protegida contra cortocircuitos."
+        ],
+        "en": [
+          "The final decision rests with security staff at screening.",
+          "If the tool is battery-powered, the spare battery goes in the cabin, protected from short circuit."
+        ]
+      },
+      "fuente": {
+        "es": "Seguridad de la aviación (AVSEC), DGAC: control de seguridad de pasajeros y equipaje de mano.",
+        "en": "Aviation security (AVSEC), DGAC: passenger and cabin baggage screening."
+      }
+    },
+    {
+      "id": "municiones",
+      "categoria": "armas",
+      "icono": "🎯",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Municiones (cartuchos para armas, División 1.4S)",
+        "en": "Ammunition (cartridges for weapons, Division 1.4S)"
+      },
+      "claves": {
+        "es": [
+          "municion",
+          "municiones",
+          "balas",
+          "cartuchos",
+          "caza",
+          "tiro deportivo"
+        ],
+        "en": [
+          "ammunition",
+          "ammo",
+          "bullets",
+          "cartridges",
+          "hunting",
+          "sport shooting"
+        ]
+      },
+      "mano": "prohibido",
+      "bodega": "restringido",
+      "aprobacion": true,
+      "limite": {
+        "es": "Solo en bodega, bien embaladas, máximo 5 kg por persona y con aprobación de la aerolínea.",
+        "en": "Checked baggage only, securely packed, maximum 5 kg per person and with airline approval."
+      },
+      "detalle": {
+        "es": [
+          "Solo cartuchos ONU 0012 u ONU 0014 (División 1.4S).",
+          "Máximo 5 kg de masa bruta por persona.",
+          "No se permiten municiones con proyectiles explosivos o incendiarios.",
+          "Las cantidades de varias personas no pueden combinarse en uno o más bultos."
+        ],
+        "en": [
+          "Only cartridges UN 0012 or UN 0014 (Division 1.4S).",
+          "Maximum 5 kg gross mass per person.",
+          "Ammunition with explosive or incendiary projectiles is not allowed.",
+          "Allowances for more than one person must not be combined into one or more packages."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 19.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 19."
+      }
+    },
+    {
+      "id": "armas-fuego",
+      "categoria": "armas",
+      "icono": "🔫",
+      "origen": "avsec",
+      "nombre": {
+        "es": "Armas de fuego",
+        "en": "Firearms"
+      },
+      "claves": {
+        "es": [
+          "arma",
+          "arma de fuego",
+          "pistola",
+          "revolver",
+          "escopeta",
+          "rifle"
+        ],
+        "en": [
+          "weapon",
+          "firearm",
+          "gun",
+          "pistol",
+          "revolver",
+          "shotgun",
+          "rifle"
+        ]
+      },
+      "mano": "prohibido",
+      "bodega": "restringido",
+      "aprobacion": true,
+      "limite": {
+        "es": "Nunca en cabina. En bodega, solo con autorización y el procedimiento de la aerolínea y la autoridad competente.",
+        "en": "Never in the cabin. In checked baggage only with authorisation and following the airline and competent authority procedure."
+      },
+      "detalle": {
+        "es": [
+          "Deben ir descargadas y en un contenedor adecuado, según las condiciones de la aerolínea.",
+          "Las municiones tienen reglas propias.",
+          "Consulta con anticipación los requisitos legales para portar y trasladar armas."
+        ],
+        "en": [
+          "They must be unloaded and in a suitable container, as required by the airline.",
+          "Ammunition has its own rules.",
+          "Check the legal requirements for carrying and transporting weapons well in advance."
+        ]
+      },
+      "fuente": {
+        "es": "Seguridad de la aviación (AVSEC), DGAC: control de seguridad de pasajeros y equipaje de mano.",
+        "en": "Aviation security (AVSEC), DGAC: passenger and cabin baggage screening."
+      }
+    },
+    {
+      "id": "gas-pimienta",
+      "categoria": "armas",
+      "icono": "🧯",
+      "origen": "no_listado",
+      "nombre": {
+        "es": "Gas pimienta y sprays de defensa personal",
+        "en": "Pepper spray and self-defence sprays"
+      },
+      "claves": {
+        "es": [
+          "gas pimienta",
+          "spray de defensa",
+          "gas lacrimogeno",
+          "defensa personal",
+          "aerosol irritante"
+        ],
+        "en": [
+          "pepper spray",
+          "mace",
+          "self-defence spray",
+          "tear gas",
+          "irritant spray"
+        ]
+      },
+      "mano": "prohibido",
+      "bodega": "prohibido",
+      "aprobacion": null,
+      "limite": {
+        "es": "No puede viajar en ningún equipaje.",
+        "en": "It cannot travel in any baggage."
+      },
+      "detalle": {
+        "es": [
+          "Los dispositivos con sustancias irritantes o incapacitantes no figuran en la Tabla 8-1."
+        ],
+        "en": [
+          "Devices containing irritant or incapacitating substances are not listed in Table 8-1."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284, Parte 8: no figura en la Tabla 8-1, por lo que no está autorizado como equipaje de pasajero.",
+        "en": "ICAO Doc 9284, Part 8: not listed in Table 8-1, therefore not permitted in passenger baggage."
+      }
+    },
+    {
+      "id": "encendedor-fosforos",
+      "categoria": "inflamables",
+      "icono": "🔥",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Encendedor de cigarrillos o paquete pequeño de fósforos de seguridad",
+        "en": "Cigarette lighter or small packet of safety matches"
+      },
+      "claves": {
+        "es": [
+          "encendedor",
+          "fosforos",
+          "cerillos",
+          "yesquero",
+          "mechero",
+          "fumar"
+        ],
+        "en": [
+          "lighter",
+          "matches",
+          "safety matches",
+          "smoking"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "prohibido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Solo uno por persona y llevado sobre ti (bolsillo), no en el bolso ni en la maleta.",
+        "en": "Only one per person, carried on your person (pocket), not in a bag or suitcase."
+      },
+      "detalle": {
+        "es": [
+          "No más de uno por persona: un encendedor o un paquete pequeño de fósforos de seguridad.",
+          "No debe contener combustible líquido no absorbido (que no sea gas licuado).",
+          "Prohibido en equipaje facturado.",
+          "Si funciona con batería de litio, esta debe cumplir las reglas de baterías y no puede recargarse a bordo."
+        ],
+        "en": [
+          "No more than one per person: one lighter or one small packet of safety matches.",
+          "It must not contain unabsorbed liquid fuel (other than liquefied gas).",
+          "Forbidden in checked baggage.",
+          "If it runs on a lithium battery, the battery must meet the battery rules and must not be recharged on board."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 5.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 5."
+      }
+    },
+    {
+      "id": "plancha-gas",
+      "categoria": "inflamables",
+      "icono": "💇",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Rizador o plancha de pelo a gas (butano)",
+        "en": "Gas-powered hair curler or straightener (butane)"
+      },
+      "claves": {
+        "es": [
+          "plancha de pelo",
+          "rizador",
+          "alisador",
+          "butano",
+          "gas"
+        ],
+        "en": [
+          "hair straightener",
+          "curling iron",
+          "hair curler",
+          "butane",
+          "gas"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "restringido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Uno por persona, con la cubierta de seguridad puesta. Sin cartuchos de repuesto.",
+        "en": "One per person, with the safety cover fitted. No spare cartridges."
+      },
+      "detalle": {
+        "es": [
+          "La cubierta de seguridad debe cubrir el elemento calefactor.",
+          "Las planchas y rizadores eléctricos comunes no tienen esta restricción."
+        ],
+        "en": [
+          "The safety cover must be fitted over the heating element.",
+          "Regular electric straighteners and curlers are not subject to this restriction."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 11.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 11."
+      }
+    },
+    {
+      "id": "motores-combustion",
+      "categoria": "inflamables",
+      "icono": "⚙️",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Motores de combustión interna (desmalezadora, motor fuera de borda)",
+        "en": "Internal combustion engines (brush cutter, outboard motor)"
+      },
+      "claves": {
+        "es": [
+          "motor",
+          "motor a combustion",
+          "desmalezadora",
+          "motor fuera de borda",
+          "motosierra",
+          "generador"
+        ],
+        "en": [
+          "engine",
+          "combustion engine",
+          "brush cutter",
+          "outboard motor",
+          "chainsaw",
+          "generator"
+        ]
+      },
+      "mano": "prohibido",
+      "bodega": "restringido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Solo en bodega y sin riesgo: sin combustible y limpios.",
+        "en": "Checked baggage only and made safe: no fuel and cleaned."
+      },
+      "detalle": {
+        "es": [
+          "Deben tomarse medidas para anular el peligro, según la Disposición especial A70."
+        ],
+        "en": [
+          "Measures must be taken to neutralise the hazard, as per Special Provision A70."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 7.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 7."
+      }
+    },
+    {
+      "id": "gas-camping",
+      "categoria": "inflamables",
+      "icono": "⛺",
+      "origen": "no_listado",
+      "nombre": {
+        "es": "Gas de camping, bencina blanca y combustibles para cocinillas",
+        "en": "Camping gas, white gas and stove fuels"
+      },
+      "claves": {
+        "es": [
+          "gas",
+          "camping",
+          "cocinilla",
+          "cartucho de gas",
+          "bencina",
+          "parafina",
+          "combustible",
+          "trekking"
+        ],
+        "en": [
+          "gas",
+          "camping",
+          "stove",
+          "gas canister",
+          "white gas",
+          "kerosene",
+          "fuel",
+          "trekking"
+        ]
+      },
+      "mano": "prohibido",
+      "bodega": "prohibido",
+      "aprobacion": null,
+      "limite": {
+        "es": "Ningún combustible ni cartucho de gas puede viajar.",
+        "en": "No fuel or gas canister may travel."
+      },
+      "detalle": {
+        "es": [
+          "Compra el combustible en tu destino."
+        ],
+        "en": [
+          "Buy fuel at your destination."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284, Parte 8: no figura en la Tabla 8-1, por lo que no está autorizado como equipaje de pasajero.",
+        "en": "ICAO Doc 9284, Part 8: not listed in Table 8-1, therefore not permitted in passenger baggage."
+      }
+    },
+    {
+      "id": "liquidos-inflamables",
+      "categoria": "inflamables",
+      "icono": "🛢️",
+      "origen": "no_listado",
+      "nombre": {
+        "es": "Pinturas, diluyentes, bencina y otros líquidos inflamables",
+        "en": "Paints, thinners, petrol and other flammable liquids"
+      },
+      "claves": {
+        "es": [
+          "pintura",
+          "diluyente",
+          "solvente",
+          "aguarras",
+          "bencina",
+          "gasolina",
+          "acetona",
+          "inflamable"
+        ],
+        "en": [
+          "paint",
+          "thinner",
+          "solvent",
+          "turpentine",
+          "petrol",
+          "gasoline",
+          "acetone",
+          "flammable"
+        ]
+      },
+      "mano": "prohibido",
+      "bodega": "prohibido",
+      "aprobacion": null,
+      "limite": {
+        "es": "No pueden viajar en ningún equipaje.",
+        "en": "They cannot travel in any baggage."
+      },
+      "detalle": {
+        "es": [
+          "Los líquidos inflamables no figuran en la Tabla 8-1, salvo los casos específicos que esta autoriza (por ejemplo, artículos de tocador o bebidas alcohólicas)."
+        ],
+        "en": [
+          "Flammable liquids are not listed in Table 8-1, except for the specific cases it allows (for example, toiletries or alcoholic beverages)."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284, Parte 8: no figura en la Tabla 8-1, por lo que no está autorizado como equipaje de pasajero.",
+        "en": "ICAO Doc 9284, Part 8: not listed in Table 8-1, therefore not permitted in passenger baggage."
+      }
+    },
+    {
+      "id": "fuegos-artificiales",
+      "categoria": "inflamables",
+      "icono": "🎆",
+      "origen": "no_listado",
+      "nombre": {
+        "es": "Fuegos artificiales, bengalas y petardos",
+        "en": "Fireworks, flares and firecrackers"
+      },
+      "claves": {
+        "es": [
+          "fuegos artificiales",
+          "bengala",
+          "petardo",
+          "pirotecnia",
+          "volador",
+          "chispitas"
+        ],
+        "en": [
+          "fireworks",
+          "flare",
+          "firecracker",
+          "pyrotechnics",
+          "sparklers"
+        ]
+      },
+      "mano": "prohibido",
+      "bodega": "prohibido",
+      "aprobacion": null,
+      "limite": {
+        "es": "No pueden viajar en ningún equipaje.",
+        "en": "They cannot travel in any baggage."
+      },
+      "detalle": {
+        "es": [
+          "Incluye cualquier artículo pirotécnico, aunque sea pequeño o de juguete."
+        ],
+        "en": [
+          "Includes any pyrotechnic article, even if small or a toy."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284, Parte 8: no figura en la Tabla 8-1, por lo que no está autorizado como equipaje de pasajero.",
+        "en": "ICAO Doc 9284, Part 8: not listed in Table 8-1, therefore not permitted in passenger baggage."
+      }
+    },
+    {
+      "id": "medicamentos",
+      "categoria": "salud",
+      "icono": "💊",
+      "origen": "avsec",
+      "nombre": {
+        "es": "Medicamentos",
+        "en": "Medicines"
+      },
+      "claves": {
+        "es": [
+          "medicamento",
+          "remedio",
+          "pastillas",
+          "jarabe",
+          "insulina",
+          "inhalador",
+          "receta"
+        ],
+        "en": [
+          "medicine",
+          "medication",
+          "pills",
+          "syrup",
+          "insulin",
+          "inhaler",
+          "prescription"
+        ]
+      },
+      "mano": "permitido",
+      "bodega": "permitido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Permitidos. Los líquidos pueden superar los 100 ml en la cantidad necesaria para el viaje.",
+        "en": "Allowed. Liquids may exceed 100 ml in the quantity needed for the trip."
+      },
+      "detalle": {
+        "es": [
+          "Lleva los de uso diario en cabina y, si es posible, con receta o respaldo médico.",
+          "Los medicamentos en aerosol siguen el límite de 0,5 kg o 0,5 L por envase y 2 kg o 2 L en total (Tabla 8-1, ítem 17)."
+        ],
+        "en": [
+          "Keep daily-use medicines in the cabin and, if possible, carry a prescription or medical note.",
+          "Medicinal aerosols follow the limit of 0.5 kg or 0.5 L per item and 2 kg or 2 L in total (Table 8-1, item 17)."
+        ]
+      },
+      "fuente": {
+        "es": "Seguridad de la aviación (AVSEC), DGAC: control de seguridad de pasajeros y equipaje de mano.",
+        "en": "Aviation security (AVSEC), DGAC: passenger and cabin baggage screening."
+      }
+    },
+    {
+      "id": "aparato-medico-litio",
+      "categoria": "salud",
+      "icono": "🩺",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Aparato médico portátil con batería de metal litio (más de 2 g y hasta 8 g)",
+        "en": "Portable medical device with lithium metal battery (over 2 g and up to 8 g)"
+      },
+      "claves": {
+        "es": [
+          "aparato medico",
+          "equipo medico",
+          "bateria metal litio",
+          "desfibrilador",
+          "dispositivo medico"
+        ],
+        "en": [
+          "medical device",
+          "medical equipment",
+          "lithium metal battery",
+          "defibrillator"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "restringido",
+      "aprobacion": true,
+      "limite": {
+        "es": "Requiere aprobación de la aerolínea. Baterías de repuesto: solo en cabina y máximo 2 por persona.",
+        "en": "Requires airline approval. Spare batteries: cabin only and no more than 2 per person."
+      },
+      "detalle": {
+        "es": [
+          "Aplica a baterías de más de 2 g y hasta 8 g de metal litio, solo para aparatos electrónicos portátiles de uso médico.",
+          "Las baterías de repuesto deben ir protegidas contra cortocircuitos.",
+          "Coordina con la aerolínea antes del vuelo."
+        ],
+        "en": [
+          "Applies to batteries over 2 g and up to 8 g of lithium metal, only for portable medical electronic devices.",
+          "Spare batteries must be protected from short circuit.",
+          "Coordinate with the airline before the flight."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 1 d) y e), modificado por la Adenda 1 (vigente desde el 27/3/2026).",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 1 d) and e), as amended by Addendum 1 (applicable from 27 March 2026)."
+      }
+    },
+    {
+      "id": "oxigeno-medico",
+      "categoria": "salud",
+      "icono": "🫁",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Cilindros de oxígeno o de aire de uso médico",
+        "en": "Medical oxygen or air cylinders"
+      },
+      "claves": {
+        "es": [
+          "oxigeno",
+          "balon de oxigeno",
+          "cilindro",
+          "aire medico",
+          "respirar"
+        ],
+        "en": [
+          "oxygen",
+          "oxygen cylinder",
+          "oxygen tank",
+          "medical air",
+          "breathing"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "restringido",
+      "aprobacion": true,
+      "limite": {
+        "es": "Con aprobación de la aerolínea. Máximo 5 kg de masa bruta por cilindro.",
+        "en": "With airline approval. Maximum 5 kg gross mass per cylinder."
+      },
+      "detalle": {
+        "es": [
+          "Cilindros, válvulas y reguladores deben ir protegidos contra la liberación involuntaria del contenido.",
+          "Se recomienda coordinar con la aerolínea con anticipación.",
+          "Se debe informar al piloto al mando la cantidad de cilindros y su ubicación a bordo."
+        ],
+        "en": [
+          "Cylinders, valves and regulators must be protected against inadvertent release of the contents.",
+          "Advance arrangements with the airline are recommended.",
+          "The pilot-in-command must be informed of the number of cylinders and their location on board."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 9.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 9."
+      }
+    },
+    {
+      "id": "ayuda-motriz",
+      "categoria": "salud",
+      "icono": "♿",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Silla de ruedas u otra ayuda motriz con batería",
+        "en": "Battery-powered wheelchair or mobility aid"
+      },
+      "claves": {
+        "es": [
+          "silla de ruedas",
+          "silla electrica",
+          "scooter de movilidad",
+          "ayuda motriz",
+          "movilidad reducida"
+        ],
+        "en": [
+          "wheelchair",
+          "power wheelchair",
+          "mobility scooter",
+          "mobility aid",
+          "reduced mobility"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "restringido",
+      "aprobacion": true,
+      "limite": {
+        "es": "Coordina con anticipación con la aerolínea. Batería de ion litio extraída: máximo 300 Wh y en cabina.",
+        "en": "Arrange in advance with the airline. Removed lithium ion battery: maximum 300 Wh and in the cabin."
+      },
+      "detalle": {
+        "es": [
+          "Para pasajeros con movilidad reducida por discapacidad, estado de salud, edad o un problema temporal (por ejemplo, una pierna fracturada).",
+          "Informa a la aerolínea el tipo de batería y cómo manipular la ayuda motriz, con las instrucciones para aislar la batería.",
+          "Si la ayuda motriz no protege adecuadamente la batería de ion litio: extráela según el fabricante, protege sus bornes y llévala en cabina (máximo 300 Wh).",
+          "Repuestos de ion litio: 1 de hasta 300 Wh o 2 de hasta 160 Wh cada una, en cabina.",
+          "Si la batería de litio permanece instalada en la ayuda motriz, no hay límite de Wh.",
+          "Baterías inderramables: máximo 1 de repuesto por pasajero."
+        ],
+        "en": [
+          "For passengers with reduced mobility due to disability, health, age or a temporary problem (for example, a broken leg).",
+          "Inform the airline of the battery type and how to handle the mobility aid, including instructions to isolate the battery.",
+          "If the mobility aid does not adequately protect the lithium ion battery: remove it per the manufacturer, protect its terminals and carry it in the cabin (maximum 300 Wh).",
+          "Lithium ion spares: 1 of up to 300 Wh or 2 of up to 160 Wh each, in the cabin.",
+          "If the lithium battery remains installed in the mobility aid, there is no Wh limit.",
+          "Non-spillable batteries: maximum 1 spare per passenger."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 4.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 4."
+      }
+    },
+    {
+      "id": "marcapasos",
+      "categoria": "salud",
+      "icono": "❤️",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Marcapasos y otros dispositivos médicos con radioisótopos",
+        "en": "Pacemakers and other medical devices containing radioisotopes"
+      },
+      "claves": {
+        "es": [
+          "marcapasos",
+          "implante",
+          "radioisotopo",
+          "dispositivo implantado"
+        ],
+        "en": [
+          "pacemaker",
+          "implant",
+          "radioisotope",
+          "implanted device"
+        ]
+      },
+      "mano": "permitido",
+      "bodega": "permitido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Permitidos cuando están implantados o son consecuencia de un tratamiento médico.",
+        "en": "Allowed when implanted or as a result of medical treatment."
+      },
+      "detalle": {
+        "es": [
+          "La Tabla 8-1 no los asocia a un tipo de equipaje: aplican a la persona que los lleva."
+        ],
+        "en": [
+          "Table 8-1 does not assign them to a baggage type: they apply to the person carrying them."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 15.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 15."
+      }
+    },
+    {
+      "id": "protesis-cartuchos",
+      "categoria": "salud",
+      "icono": "🦿",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Prótesis (extremidades mecánicas) con cartuchos de gas",
+        "en": "Prosthetics (mechanical limbs) with gas cartridges"
+      },
+      "claves": {
+        "es": [
+          "protesis",
+          "extremidad mecanica",
+          "pierna ortopedica",
+          "cartucho de gas"
+        ],
+        "en": [
+          "prosthesis",
+          "prosthetic",
+          "mechanical limb",
+          "gas cartridge"
+        ]
+      },
+      "mano": "permitido",
+      "bodega": "permitido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Permitidas, incluidos cartuchos de repuesto de tamaño similar si son necesarios para todo el viaje.",
+        "en": "Allowed, including spare cartridges of similar size if needed for the whole journey."
+      },
+      "detalle": {
+        "es": [
+          "Aplica a cartuchos de la División 2.2 para activar extremidades mecánicas."
+        ],
+        "en": [
+          "Applies to Division 2.2 cartridges for operating mechanical limbs."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 10.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 10."
+      }
+    },
+    {
+      "id": "termometro-mercurio",
+      "categoria": "salud",
+      "icono": "🌡️",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Termómetro médico o clínico con mercurio",
+        "en": "Medical or clinical mercury thermometer"
+      },
+      "claves": {
+        "es": [
+          "termometro",
+          "mercurio",
+          "fiebre",
+          "clinico"
+        ],
+        "en": [
+          "thermometer",
+          "mercury",
+          "fever",
+          "clinical"
+        ]
+      },
+      "mano": "prohibido",
+      "bodega": "restringido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Solo en bodega: uno por persona y en su estuche protector.",
+        "en": "Checked baggage only: one per person and in its protective case."
+      },
+      "detalle": {
+        "es": [
+          "Los termómetros digitales no tienen esta restricción."
+        ],
+        "en": [
+          "Digital thermometers are not subject to this restriction."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 16.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 16."
+      }
+    },
+    {
+      "id": "alimentos-solidos",
+      "categoria": "alimentos",
+      "icono": "🥪",
+      "origen": "avsec",
+      "nombre": {
+        "es": "Alimentos sólidos (sándwich, galletas, fruta)",
+        "en": "Solid food (sandwich, biscuits, fruit)"
+      },
+      "claves": {
+        "es": [
+          "comida",
+          "alimento",
+          "sandwich",
+          "galletas",
+          "fruta",
+          "snack",
+          "colacion"
+        ],
+        "en": [
+          "food",
+          "sandwich",
+          "biscuits",
+          "cookies",
+          "fruit",
+          "snack"
+        ]
+      },
+      "mano": "permitido",
+      "bodega": "permitido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Permitidos en cabina y en bodega.",
+        "en": "Allowed in the cabin and in checked baggage."
+      },
+      "detalle": {
+        "es": [
+          "Al llegar a Chile debes declarar los productos de origen animal o vegetal ante el SAG.",
+          "Otros países también controlan el ingreso de alimentos: revisa las reglas de tu destino."
+        ],
+        "en": [
+          "When arriving in Chile you must declare animal and plant products to the SAG (Agricultural and Livestock Service).",
+          "Other countries also control food imports: check the rules of your destination."
+        ]
+      },
+      "fuente": {
+        "es": "Seguridad de la aviación (AVSEC), DGAC: control de seguridad de pasajeros y equipaje de mano.",
+        "en": "Aviation security (AVSEC), DGAC: passenger and cabin baggage screening."
+      }
+    },
+    {
+      "id": "alimentos-cremosos",
+      "categoria": "alimentos",
+      "icono": "🍯",
+      "origen": "avsec",
+      "nombre": {
+        "es": "Alimentos líquidos o cremosos (mermelada, manjar, yogur, salsas)",
+        "en": "Liquid or creamy food (jam, dulce de leche, yoghurt, sauces)"
+      },
+      "claves": {
+        "es": [
+          "mermelada",
+          "manjar",
+          "yogur",
+          "salsa",
+          "miel",
+          "sopa",
+          "conserva"
+        ],
+        "en": [
+          "jam",
+          "dulce de leche",
+          "yoghurt",
+          "yogurt",
+          "sauce",
+          "honey",
+          "soup",
+          "preserves"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "permitido",
+      "aprobacion": false,
+      "limite": {
+        "es": "En cabina, envases de hasta 100 ml en la bolsa de 1 litro. En bodega, sin ese límite.",
+        "en": "In the cabin, containers of up to 100 ml in the 1-litre bag. No such limit in checked baggage."
+      },
+      "detalle": {
+        "es": [
+          "Se consideran líquidos para el control de seguridad."
+        ],
+        "en": [
+          "They are treated as liquids at security screening."
+        ]
+      },
+      "fuente": {
+        "es": "Seguridad de la aviación (AVSEC), DGAC: control de seguridad de pasajeros y equipaje de mano.",
+        "en": "Aviation security (AVSEC), DGAC: passenger and cabin baggage screening."
+      }
+    },
+    {
+      "id": "alimentos-bebe",
+      "categoria": "alimentos",
+      "icono": "🍼",
+      "origen": "avsec",
+      "nombre": {
+        "es": "Leche y alimentos para bebés",
+        "en": "Baby milk and baby food"
+      },
+      "claves": {
+        "es": [
+          "leche",
+          "mamadera",
+          "papilla",
+          "bebe",
+          "formula",
+          "compota"
+        ],
+        "en": [
+          "milk",
+          "baby bottle",
+          "baby food",
+          "formula",
+          "infant"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "permitido",
+      "aprobacion": false,
+      "limite": {
+        "es": "En cabina se permiten en la cantidad necesaria para el viaje, aunque superen 100 ml.",
+        "en": "Allowed in the cabin in the quantity needed for the trip, even above 100 ml."
+      },
+      "detalle": {
+        "es": [
+          "Pueden pedirte mostrarlos por separado en el control de seguridad."
+        ],
+        "en": [
+          "You may be asked to present them separately at security screening."
+        ]
+      },
+      "fuente": {
+        "es": "Seguridad de la aviación (AVSEC), DGAC: control de seguridad de pasajeros y equipaje de mano.",
+        "en": "Aviation security (AVSEC), DGAC: passenger and cabin baggage screening."
+      }
+    },
+    {
+      "id": "hielo-seco",
+      "categoria": "alimentos",
+      "icono": "🧊",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Hielo seco (para conservar alimentos perecederos)",
+        "en": "Dry ice (to keep perishables cold)"
+      },
+      "claves": {
+        "es": [
+          "hielo seco",
+          "co2 solido",
+          "cooler",
+          "congelados",
+          "mariscos",
+          "refrigerar"
+        ],
+        "en": [
+          "dry ice",
+          "solid co2",
+          "cooler",
+          "frozen",
+          "seafood",
+          "keep cold"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "restringido",
+      "aprobacion": true,
+      "limite": {
+        "es": "Con aprobación de la aerolínea. Máximo 2,5 kg por persona, en un bulto que deje escapar el gas.",
+        "en": "With airline approval. Maximum 2.5 kg per person, in a package that allows the gas to escape."
+      },
+      "detalle": {
+        "es": [
+          "Solo para embalar mercancías perecederas.",
+          "En equipaje facturado, cada bulto debe marcarse \"HIELO SECO\" (o \"DIÓXIDO DE CARBONO SÓLIDO\") e indicar el peso neto o que es de 2,5 kg o menos."
+        ],
+        "en": [
+          "Only for packing perishables.",
+          "In checked baggage, each package must be marked \"DRY ICE\" (or \"CARBON DIOXIDE, SOLID\") with the net weight or an indication that it is 2.5 kg or less."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 18.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 18."
+      }
+    },
+    {
+      "id": "bates-palos",
+      "categoria": "deportivos",
+      "icono": "🏏",
+      "origen": "avsec",
+      "nombre": {
+        "es": "Bates, palos de golf o hockey y equipo de artes marciales",
+        "en": "Bats, golf or hockey sticks and martial arts equipment"
+      },
+      "claves": {
+        "es": [
+          "bate",
+          "palo de golf",
+          "palo de hockey",
+          "artes marciales",
+          "nunchaku",
+          "baston"
+        ],
+        "en": [
+          "bat",
+          "golf club",
+          "hockey stick",
+          "martial arts",
+          "nunchaku",
+          "baton"
+        ]
+      },
+      "mano": "prohibido",
+      "bodega": "permitido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Nunca en cabina. En bodega, sin problema.",
+        "en": "Never in the cabin. Fine in checked baggage."
+      },
+      "detalle": {
+        "es": [
+          "Consulta con tu aerolínea las condiciones para equipaje deportivo de gran tamaño."
+        ],
+        "en": [
+          "Check with your airline for oversized sports equipment conditions."
+        ]
+      },
+      "fuente": {
+        "es": "Seguridad de la aviación (AVSEC), DGAC: control de seguridad de pasajeros y equipaje de mano.",
+        "en": "Aviation security (AVSEC), DGAC: passenger and cabin baggage screening."
+      }
+    },
+    {
+      "id": "cartuchos-co2",
+      "categoria": "deportivos",
+      "icono": "🚲",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Cartuchos pequeños de gas (CO2) para infladores, sifones u otros usos",
+        "en": "Small gas (CO2) cartridges for inflators, soda siphons or other uses"
+      },
+      "claves": {
+        "es": [
+          "co2",
+          "cartucho",
+          "inflador",
+          "bicicleta",
+          "sifon",
+          "garrafa pequena"
+        ],
+        "en": [
+          "co2",
+          "cartridge",
+          "inflator",
+          "bicycle",
+          "bike",
+          "soda siphon"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "restringido",
+      "aprobacion": true,
+      "limite": {
+        "es": "Con aprobación de la aerolínea. Máximo 4 cartuchos por persona, de hasta 50 ml cada uno.",
+        "en": "With airline approval. Maximum 4 cartridges per person, up to 50 ml each."
+      },
+      "detalle": {
+        "es": [
+          "Cartuchos de la División 2.2 sin peligro secundario, que no sean para dispositivos de seguridad autoinflables.",
+          "Para el CO2, un cartucho de 50 ml equivale a uno de 28 g."
+        ],
+        "en": [
+          "Division 2.2 cartridges with no subsidiary hazard, not for self-inflating safety devices.",
+          "For CO2, a 50 ml cartridge is equivalent to a 28 g cartridge."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 13.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 13."
+      }
+    },
+    {
+      "id": "chaleco-autoinflable",
+      "categoria": "deportivos",
+      "icono": "🦺",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Chaleco salvavidas u otro dispositivo de seguridad autoinflable",
+        "en": "Life jacket or other self-inflating safety device"
+      },
+      "claves": {
+        "es": [
+          "chaleco salvavidas",
+          "autoinflable",
+          "salvavidas",
+          "navegacion",
+          "kayak"
+        ],
+        "en": [
+          "life jacket",
+          "life vest",
+          "self-inflating",
+          "sailing",
+          "kayak"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "restringido",
+      "aprobacion": true,
+      "limite": {
+        "es": "Con aprobación de la aerolínea. Máximo 2 por persona, con hasta 2 cartuchos instalados y 2 de repuesto cada uno.",
+        "en": "With airline approval. Maximum 2 per person, each with up to 2 installed and 2 spare cartridges."
+      },
+      "detalle": {
+        "es": [
+          "Deben ir embalados para que no puedan accionarse accidentalmente.",
+          "Los cartuchos deben ser solo para inflar el dispositivo."
+        ],
+        "en": [
+          "They must be packed so they cannot be activated accidentally.",
+          "Cartridges must be solely for inflating the device."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 12.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 12."
+      }
+    },
+    {
+      "id": "mochila-avalancha",
+      "categoria": "deportivos",
+      "icono": "🏔️",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Mochila de salvamento para avalanchas",
+        "en": "Avalanche rescue backpack"
+      },
+      "claves": {
+        "es": [
+          "mochila avalancha",
+          "airbag",
+          "esqui",
+          "montana",
+          "nieve"
+        ],
+        "en": [
+          "avalanche backpack",
+          "airbag",
+          "ski",
+          "mountain",
+          "snow"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "restringido",
+      "aprobacion": true,
+      "limite": {
+        "es": "Con aprobación de la aerolínea. Una por persona, embalada para que no se active.",
+        "en": "With airline approval. One per person, packed so it cannot be activated."
+      },
+      "detalle": {
+        "es": [
+          "Puede tener un mecanismo pirotécnico de accionamiento de hasta 200 mg netos de la División 1.4S.",
+          "Las bolsas inflables deben tener válvulas de descompresión."
+        ],
+        "en": [
+          "It may contain a pyrotechnic trigger mechanism with no more than 200 mg net of Division 1.4S.",
+          "The airbags must have pressure relief valves."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 14.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 14."
+      }
+    },
+    {
+      "id": "nitrogeno-liquido",
+      "categoria": "otros",
+      "icono": "🧪",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Nitrógeno líquido refrigerado (en envase criogénico seco)",
+        "en": "Refrigerated liquid nitrogen (in a dry shipper)"
+      },
+      "claves": {
+        "es": [
+          "nitrogeno liquido",
+          "criogenico",
+          "dry shipper",
+          "muestras"
+        ],
+        "en": [
+          "liquid nitrogen",
+          "cryogenic",
+          "dry shipper",
+          "samples"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "restringido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Solo en recipientes aislados que absorban todo el líquido y no acumulen presión.",
+        "en": "Only in insulated packaging that fully absorbs the liquid and does not build up pressure."
+      },
+      "detalle": {
+        "es": [
+          "Ver la Disposición especial A152."
+        ],
+        "en": [
+          "See Special Provision A152."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 22.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 22."
+      }
+    },
+    {
+      "id": "especimenes",
+      "categoria": "otros",
+      "icono": "🔬",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Especímenes no infecciosos en soluciones inflamables (muestras científicas)",
+        "en": "Non-infectious specimens in flammable solutions (scientific samples)"
+      },
+      "claves": {
+        "es": [
+          "especimen",
+          "muestra",
+          "formalina",
+          "alcohol",
+          "laboratorio",
+          "museo"
+        ],
+        "en": [
+          "specimen",
+          "sample",
+          "formalin",
+          "laboratory",
+          "museum"
+        ]
+      },
+      "mano": "restringido",
+      "bodega": "restringido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Deben embalarse y marcarse según la Disposición especial A180.",
+        "en": "They must be packed and marked as per Special Provision A180."
+      },
+      "detalle": {
+        "es": [
+          "Consulta con la aerolínea el embalaje requerido."
+        ],
+        "en": [
+          "Check the required packaging with the airline."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 21.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 21."
+      }
+    },
+    {
+      "id": "dispositivos-permeacion",
+      "categoria": "otros",
+      "icono": "📟",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Dispositivos de permeación (calibración de monitores de calidad del aire)",
+        "en": "Permeation devices (for calibrating air quality monitors)"
+      },
+      "claves": {
+        "es": [
+          "permeacion",
+          "calibracion",
+          "calidad del aire",
+          "monitor"
+        ],
+        "en": [
+          "permeation",
+          "calibration",
+          "air quality",
+          "monitor"
+        ]
+      },
+      "mano": "prohibido",
+      "bodega": "restringido",
+      "aprobacion": false,
+      "limite": {
+        "es": "Solo en bodega, embalados según la Disposición especial A41.",
+        "en": "Checked baggage only, packed as per Special Provision A41."
+      },
+      "detalle": {
+        "es": [
+          "Uso técnico: consulta con la aerolínea antes de viajar."
+        ],
+        "en": [
+          "Technical use: check with the airline before travelling."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 20.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 20."
+      }
+    },
+    {
+      "id": "equipo-seguridad",
+      "categoria": "otros",
+      "icono": "💼",
+      "origen": "tabla81",
+      "nombre": {
+        "es": "Maletines y cajas de seguridad con mercancías peligrosas incorporadas",
+        "en": "Security briefcases and cash boxes with built-in dangerous goods"
+      },
+      "claves": {
+        "es": [
+          "maletin de seguridad",
+          "caja de seguridad",
+          "transporte de valores",
+          "alarma"
+        ],
+        "en": [
+          "security briefcase",
+          "cash box",
+          "cash bag",
+          "valuables",
+          "alarm"
+        ]
+      },
+      "mano": "prohibido",
+      "bodega": "restringido",
+      "aprobacion": true,
+      "limite": {
+        "es": "Solo en bodega, con aprobación de la aerolínea y un medio eficaz contra la activación accidental.",
+        "en": "Checked baggage only, with airline approval and an effective means to prevent accidental activation."
+      },
+      "detalle": {
+        "es": [
+          "Las mercancías peligrosas incorporadas deben cumplir la Disposición especial A178."
+        ],
+        "en": [
+          "The built-in dangerous goods must meet Special Provision A178."
+        ]
+      },
+      "fuente": {
+        "es": "OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1, ítem 23.",
+        "en": "ICAO Doc 9284 (2025–2026 Ed.), Table 8-1, item 23."
+      }
+    }
+  ]
+}

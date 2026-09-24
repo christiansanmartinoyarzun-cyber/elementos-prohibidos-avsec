@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Mantenedor de contenidos · Elementos Prohibidos en Vuelos</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#0F3C7A">
+  <link rel="icon" href="./icon.svg" type="image/svg+xml">
+
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('tema');
+        var oscuro = t === 'oscuro' || (!t && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (oscuro) document.documentElement.classList.add('dark');
+      } catch (e) {}
+    })();
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: { senal: '#FFC72C', asfalto: '#1B2330', pista: '#262F3D', tinta: '#141A24', papel: '#F3F5F8' },
+          fontFamily: { sans: ['"Atkinson Hyperlegible"', 'system-ui', '-apple-system', '"Segoe UI"', 'Roboto', 'sans-serif'] }
+        }
+      }
+    };
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body class="bg-papel text-tinta dark:bg-asfalto dark:text-slate-100 font-sans antialiased min-h-screen flex flex-col">
+
+  <header class="admin-cabecera">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between gap-3">
+      <div class="flex items-center gap-3 min-w-0">
+        <img src="./logo.png" alt="DGAC" class="logo-dgac" onerror="this.hidden = true;">
+        <div class="min-w-0">
+          <p class="text-xs font-bold uppercase tracking-wide opacity-80">DGAC · Mantenedor de contenidos</p>
+          <h1 class="text-lg font-bold leading-tight">Elementos Prohibidos en Vuelos</h1>
+        </div>
+      </div>
+      <a href="./index.html" class="btn btn-claro">← Volver al portal</a>
+    </div>
+  </header>
+
+  <main class="flex-1 w-full max-w-6xl mx-auto px-4 py-5">
+
+    <!-- Estado del catálogo -->
+    <section class="panel mb-4" aria-labelledby="estadoTitulo">
+      <div class="flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <h2 id="estadoTitulo" class="text-lg font-bold">Catálogo de elementos <span id="contador" class="text-sm font-normal opacity-70"></span></h2>
+          <p class="text-sm mt-1"><span id="estadoFuente"></span> <span id="estadoCambios" class="badge-cambios" hidden>Cambios sin publicar</span></p>
+        </div>
+        <div class="admin-acciones">
+          <button type="button" id="btnNuevo" class="btn btn-primario-admin">＋ Nuevo elemento</button>
+          <button type="button" id="btnVista" class="btn">👁️ Vista previa</button>
+          <button type="button" id="btnExportar" class="btn">⬇ Exportar JSON</button>
+          <button type="button" id="btnImportar" class="btn">⬆ Importar JSON</button>
+          <input type="file" id="archivoImportar" accept="application/json,.json" hidden>
+          <button type="button" id="btnDescartar" class="btn">↩ Descartar cambios</button>
+          <button type="button" id="btnSemilla" class="btn btn-peligro">↺ Restaurar semilla</button>
+        </div>
+      </div>
+
+      <details class="instrucciones mt-3">
+        <summary>¿Cómo publicar los cambios para los pasajeros?</summary>
+        <ol>
+          <li>Edita el catálogo aquí. Los cambios se guardan como <strong>borrador en este navegador</strong> y no los ven los pasajeros.</li>
+          <li>Revisa el resultado con <strong>Vista previa</strong>.</li>
+          <li>Presiona <strong>Exportar JSON</strong>: se descarga el archivo <code>catalogo.json</code>.</li>
+          <li>En GitHub, sube ese <code>catalogo.json</code> al repositorio reemplazando el anterior (<em>Add file → Upload files → Commit changes</em>).</li>
+          <li>En 1 a 2 minutos el portal mostrará el catálogo actualizado a todos los pasajeros.</li>
+        </ol>
+        <p class="mt-2">El borrador solo existe en este navegador: para trabajar desde otro equipo, exporta el JSON y luego impórtalo allá.</p>
+      </details>
+    </section>
+
+    <!-- Filtros de la tabla -->
+    <div class="flex flex-wrap gap-2 mb-3">
+      <label class="sr-only" for="adminBuscar">Buscar en el catálogo</label>
+      <input id="adminBuscar" type="search" class="campo flex-1 min-w-[12rem]" placeholder="Buscar por nombre, palabra clave o id">
+      <label class="sr-only" for="adminCategoria">Filtrar por categoría</label>
+      <select id="adminCategoria" class="campo"></select>
+      <label class="sr-only" for="adminOrigen">Filtrar por origen normativo</label>
+      <select id="adminOrigen" class="campo">
+        <option value="">Todos los orígenes</option>
+        <option value="tabla81">Tabla 8-1</option>
+        <option value="no_listado">No figura en Tabla 8-1</option>
+        <option value="avsec">Seguridad AVSEC (validar)</option>
+      </select>
+    </div>
+
+    <!-- Tabla -->
+    <div class="tabla-admin" role="table" aria-label="Catálogo de elementos">
+      <div class="tabla-admin-cabecera" role="row">
+        <span role="columnheader">Elemento</span>
+        <span role="columnheader">Categoría</span>
+        <span role="columnheader">Cabina</span>
+        <span role="columnheader">Bodega</span>
+        <span role="columnheader">Aprobación</span>
+        <span role="columnheader" class="text-right">Acciones</span>
+      </div>
+      <div id="tablaCuerpo" role="rowgroup"></div>
+    </div>
+    <p id="tablaVacia" class="vacio mt-3" hidden>No hay elementos que coincidan con el filtro.</p>
+  </main>
+
+  <footer class="pie">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex flex-wrap justify-between gap-2">
+      <p>Normativa base: OACI Doc 9284 (Ed. 2025–2026), Tabla 8-1 y Adenda 1.</p>
+      <p class="font-bold">Proyecto DASA - ETA</p>
+    </div>
+  </footer>
+
+  <!-- Formulario de edición -->
+  <dialog id="dialogo" class="dialogo" aria-labelledby="dialogoTitulo">
+    <form id="formElemento" novalidate>
+      <div class="dialogo-cabecera">
+        <h2 id="dialogoTitulo" class="text-lg font-bold">Editar elemento</h2>
+        <button type="button" class="btn-limpiar" data-cerrar aria-label="Cerrar">✕</button>
+      </div>
+
+      <div class="dialogo-cuerpo">
+        <p id="formErrores" class="form-errores" role="alert" hidden></p>
+
+        <fieldset class="grupo">
+          <legend>General</legend>
+          <div class="form-grid">
+            <label class="campo-etiqueta">Categoría
+              <select id="f_categoria" class="campo" required></select>
+            </label>
+            <label class="campo-etiqueta">Ícono (emoji)
+              <input id="f_icono" class="campo" maxlength="8" placeholder="🔋">
+            </label>
+            <label class="campo-etiqueta">Origen normativo
+              <select id="f_origen" class="campo">
+                <option value="tabla81">Tabla 8-1 (OACI Doc 9284)</option>
+                <option value="no_listado">No figura en Tabla 8-1 (no autorizado)</option>
+                <option value="avsec">Seguridad AVSEC (validar con DGAC)</option>
+              </select>
+            </label>
+            <label class="campo-etiqueta">Identificador (id)
+              <input id="f_id" class="campo" readonly>
+            </label>
+          </div>
+        </fieldset>
+
+        <fieldset class="grupo">
+          <legend>Dónde puede viajar</legend>
+          <div class="form-grid">
+            <label class="campo-etiqueta">🎒 Equipaje de mano (cabina)
+              <select id="f_mano" class="campo">
+                <option value="permitido">✅ Permitido</option>
+                <option value="restringido">⚠️ Restringido</option>
+                <option value="prohibido">❌ Prohibido</option>
+              </select>
+            </label>
+            <label class="campo-etiqueta">🧳 Equipaje de bodega
+              <select id="f_bodega" class="campo">
+                <option value="permitido">✅ Permitido</option>
+                <option value="restringido">⚠️ Restringido</option>
+                <option value="prohibido">❌ Prohibido</option>
+              </select>
+            </label>
+            <label class="campo-etiqueta">✈️ Aprobación del explotador
+              <select id="f_aprobacion" class="campo">
+                <option value="false">No requiere</option>
+                <option value="true">Requiere aprobación</option>
+                <option value="null">No aplica (no puede viajar)</option>
+              </select>
+            </label>
+          </div>
+        </fieldset>
+
+        <div class="form-idiomas">
+          <fieldset class="grupo">
+            <legend>🇪🇸 Español</legend>
+            <label class="campo-etiqueta">Nombre *
+              <input id="f_nombre_es" class="campo" required>
+            </label>
+            <label class="campo-etiqueta">Condición breve (se muestra en la tarjeta) *
+              <textarea id="f_limite_es" class="campo" rows="3" required></textarea>
+            </label>
+            <label class="campo-etiqueta">Detalle (una condición por línea)
+              <textarea id="f_detalle_es" class="campo" rows="5"></textarea>
+            </label>
+            <label class="campo-etiqueta">Palabras clave (separadas por coma)
+              <input id="f_claves_es" class="campo">
+            </label>
+            <label class="campo-etiqueta">Referencia normativa *
+              <textarea id="f_fuente_es" class="campo" rows="2" required></textarea>
+            </label>
+          </fieldset>
+
+          <fieldset class="grupo">
+            <legend>🇬🇧 English</legend>
+            <label class="campo-etiqueta">Name *
+              <input id="f_nombre_en" class="campo" required>
+            </label>
+            <label class="campo-etiqueta">Short condition (shown on the card) *
+              <textarea id="f_limite_en" class="campo" rows="3" required></textarea>
+            </label>
+            <label class="campo-etiqueta">Details (one condition per line)
+              <textarea id="f_detalle_en" class="campo" rows="5"></textarea>
+            </label>
+            <label class="campo-etiqueta">Keywords (comma separated)
+              <input id="f_claves_en" class="campo">
+            </label>
+            <label class="campo-etiqueta">Regulatory reference *
+              <textarea id="f_fuente_en" class="campo" rows="2" required></textarea>
+            </label>
+          </fieldset>
+        </div>
+      </div>
+
+      <div class="dialogo-pie">
+        <button type="button" class="btn" data-cerrar>Cancelar</button>
+        <button type="submit" class="btn btn-primario-admin">Guardar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
+
+  <script src="./data.js"></script>
+  <script src="./admin.js"></script>
+</body>
+</html>
