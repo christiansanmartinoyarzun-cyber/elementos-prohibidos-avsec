@@ -1263,3 +1263,71 @@ html.dark .toast {
 .marca {
   min-width: 0;
 }
+
+/* =========================================================
+   Filas de chips: flechas en celular, varias líneas en computador
+   ========================================================= */
+.chips-contenedor {
+  position: relative;
+  min-width: 0;
+}
+
+.filtros-estado-fila .chips-contenedor {
+  flex: 1;
+}
+
+.chips-flecha {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding-bottom: 3px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(20, 26, 36, 0.25);
+  background: #FFFFFF;
+  color: var(--tinta);
+  font-size: 1.6rem;
+  font-weight: 700;
+  line-height: 1;
+  box-shadow: 0 2px 8px rgba(20, 26, 36, 0.22);
+  cursor: pointer;
+}
+
+.chips-flecha.izq { left: 0.4rem; }
+.chips-flecha.der { right: 0.4rem; }
+
+.chips-flecha[hidden] {
+  display: none;
+}
+
+html.dark .chips-flecha {
+  background: var(--asfalto);
+  color: #E8ECF2;
+  border-color: #56627A;
+}
+
+/* Difuminado en el borde donde hay más chips */
+.chips-contenedor.hay-der .chips {
+  -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 72px), transparent);
+  mask-image: linear-gradient(to right, #000 calc(100% - 72px), transparent);
+}
+
+.chips-contenedor.hay-izq .chips {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 72px);
+  mask-image: linear-gradient(to right, transparent, #000 72px);
+}
+
+.chips-contenedor.hay-izq.hay-der .chips {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 72px, #000 calc(100% - 72px), transparent);
+  mask-image: linear-gradient(to right, transparent, #000 72px, #000 calc(100% - 72px), transparent);
+}
+
+
+/* Evita que el ajuste de desplazamiento mueva la fila al cargar */
+.chips {
+  scroll-padding-inline: 1rem;
+}

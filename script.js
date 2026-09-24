@@ -56,7 +56,9 @@
       normativa: 'Normativa vigente: ',
       actualizado: 'Actualizado: ',
       mantenedor: '⚙️ Mantenedor',
-      modoOscuro: 'Modo oscuro'
+      modoOscuro: 'Modo oscuro',
+      anteriores: 'Ver anteriores',
+      siguientes: 'Ver más'
     },
     en: {
       app: 'Prohibited Items on Flights',
@@ -105,7 +107,9 @@
       normativa: 'Regulations in force: ',
       actualizado: 'Updated: ',
       mantenedor: '⚙️ Maintenance',
-      modoOscuro: 'Dark mode'
+      modoOscuro: 'Dark mode',
+      anteriores: 'Show previous',
+      siguientes: 'Show more'
     }
   };
 
@@ -230,6 +234,36 @@
     }).join('');
 
     marcarChips();
+    actualizarFlechas();
+  }
+
+  /* ---------- Flechas para desplazar las filas de chips ---------- */
+  function iniciarFlechas() {
+    document.querySelectorAll('.chips-contenedor').forEach(function (c) {
+      var tira = c.querySelector('.chips');
+      var izq = c.querySelector('.chips-flecha.izq');
+      var der = c.querySelector('.chips-flecha.der');
+      c._actualizar = function () {
+        var max = tira.scrollWidth - tira.clientWidth;
+        var hayIzq = tira.scrollLeft > 4;
+        var hayDer = tira.scrollLeft < max - 4;
+        izq.hidden = !hayIzq;
+        der.hidden = !hayDer;
+        c.classList.toggle('hay-izq', hayIzq);
+        c.classList.toggle('hay-der', hayDer);
+      };
+      tira.addEventListener('scroll', c._actualizar, { passive: true });
+      izq.addEventListener('click', function () { tira.scrollBy({ left: -tira.clientWidth * 0.7, behavior: 'smooth' }); });
+      der.addEventListener('click', function () { tira.scrollBy({ left: tira.clientWidth * 0.7, behavior: 'smooth' }); });
+    });
+    window.addEventListener('resize', actualizarFlechas);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(actualizarFlechas);
+  }
+
+  function actualizarFlechas() {
+    document.querySelectorAll('.chips-contenedor').forEach(function (c) {
+      if (c._actualizar) c._actualizar();
+    });
   }
 
   function marcarChips() {
@@ -324,6 +358,7 @@
     actualizarResumen(res.length);
     actualizarContadores();
     marcarChips();
+    actualizarFlechas();
   }
 
   /* ---------- Idioma ---------- */
@@ -450,6 +485,7 @@
     aplicarIdioma(estado.lang, false);
   }
 
+  iniciarFlechas();
   aplicarTema(document.documentElement.classList.contains('dark'), false);
   aplicarIdioma(estado.lang, false);
 

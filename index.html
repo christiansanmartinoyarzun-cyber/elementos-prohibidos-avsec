@@ -111,11 +111,19 @@
     </div>
 
     <nav class="max-w-5xl mx-auto" aria-label="Filtrar por categoría" data-i18n-aria="filtrarCategoria">
-      <div class="chips" id="chipsCategorias"></div>
+      <div class="chips-contenedor">
+        <button type="button" class="chips-flecha izq" data-i18n-aria="anteriores" aria-label="Ver anteriores" hidden>‹</button>
+        <div class="chips" id="chipsCategorias"></div>
+        <button type="button" class="chips-flecha der" data-i18n-aria="siguientes" aria-label="Ver más" hidden>›</button>
+      </div>
     </nav>
 
     <div class="max-w-5xl mx-auto filtros-estado-fila">
-      <div class="chips chips-estado" id="chipsEstado" role="group" aria-label="Filtrar por dónde puede viajar" data-i18n-aria="filtrarEstado"></div>
+      <div class="chips-contenedor">
+        <button type="button" class="chips-flecha izq" data-i18n-aria="anteriores" aria-label="Ver anteriores" hidden>‹</button>
+        <div class="chips chips-estado" id="chipsEstado" role="group" aria-label="Filtrar por dónde puede viajar" data-i18n-aria="filtrarEstado"></div>
+        <button type="button" class="chips-flecha der" data-i18n-aria="siguientes" aria-label="Ver más" hidden>›</button>
+      </div>
       <button type="button" id="limpiarFiltros" class="btn-texto" data-i18n="limpiarFiltros" hidden>Limpiar filtros</button>
     </div>
   </div>
