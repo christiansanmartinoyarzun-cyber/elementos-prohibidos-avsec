@@ -1331,3 +1331,26 @@ html.dark .chips-flecha {
 .chips {
   scroll-padding-inline: 1rem;
 }
+
+/* Íconos propios (SVG) */
+.icono-svg {
+  display: block;
+  width: 2.1rem;
+  height: 2.1rem;
+  color: var(--tinta);
+}
+
+html.dark .icono-svg {
+  color: #E8ECF2;
+}
+
+.celda-icono .icono-svg {
+  width: 1.35rem;
+  height: 1.35rem;
+}
+
+.campo-ayuda {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: var(--texto-suave);
+}

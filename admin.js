@@ -119,7 +119,7 @@
       var c = EPV.categoria(e.categoria);
       return '<div class="tabla-admin-fila" role="row">' +
         '<span role="cell" class="celda-elemento">' +
-          '<span class="celda-icono" aria-hidden="true">' + esc(e.icono || c.icono) + '</span>' +
+          '<span class="celda-icono" aria-hidden="true">' + EPV.iconoHTML(e.icono, c.icono) + '</span>' +
           '<span class="min-w-0"><strong>' + esc(e.nombre.es) + '</strong>' +
           '<span class="celda-sub">' + esc(e.nombre.en) + '</span>' +
           '<span class="badge-origen" data-origen="' + esc(e.origen || '') + '">' + esc(ETIQUETA_ORIGEN[e.origen] || 'Sin origen') + '</span></span>' +

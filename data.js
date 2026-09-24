@@ -10,7 +10,7 @@
    - Adenda 1 (vigente desde el 27/3/2026): nuevas reglas de baterías
      de litio y bancos de energía (power banks).
    - Elementos de seguridad de la aviación (AVSEC) no cubiertos por la
-     Tabla 8-1 (líquidos 100 ml, cortopunzantes, etc.) se marcan con
+     Tabla 8-1 (líquidos, cortopunzantes, etc.) se marcan con
      origen "avsec" para su validación por el área técnica.
    ========================================================= */
 
@@ -34,6 +34,31 @@ EPV.CATEGORIAS = [
 ];
 
 EPV.ESTADOS = ['permitido', 'restringido', 'prohibido'];
+
+/* ---------- Íconos propios (SVG) ----------
+   En el campo "icono" se puede usar un emoji o "svg:<nombre>". */
+EPV.ICONOS_SVG = {
+  'arma-fuego': '<svg class="icono-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
+    '<path fill="currentColor" d="M2.2 6.4h16.9l.6-.9h2.1v4.6c0 .5-.4.9-.9.9h-8.6l-.9 2.2a1 1 0 0 1-.9.6H9.1l1.2 5.4a.8.8 0 0 1-.8 1H5.6a.8.8 0 0 1-.8-.6L2.9 11.5 2.2 10.9Z"/>' +
+    '<path fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" d="M11 11.2c0 1.9 1 2.6 2.6 2.4v-2.3"/>' +
+    '</svg>',
+  'spray-defensa': '<svg class="icono-svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' +
+    '<rect fill="currentColor" x="4.5" y="9.4" width="8" height="12" rx="1.6"/>' +
+    '<path fill="currentColor" d="M5.4 9.6c0-1.7 1.4-2.6 3.1-2.6s3.1.9 3.1 2.6Z"/>' +
+    '<rect fill="currentColor" x="7.1" y="3.6" width="2.8" height="3.4" rx=".5"/>' +
+    '<rect fill="currentColor" x="9.9" y="4.3" width="1.9" height="1.3" rx=".4"/>' +
+    '<g fill="#D1344B"><circle cx="14.6" cy="5" r=".95"/><circle cx="17.3" cy="3.4" r=".95"/><circle cx="17.3" cy="6.6" r=".95"/>' +
+    '<circle cx="20.1" cy="2.2" r=".95"/><circle cx="20.1" cy="5" r=".95"/><circle cx="20.1" cy="7.8" r=".95"/></g>' +
+    '</svg>'
+};
+
+EPV.iconoHTML = function (icono, respaldo) {
+  var v = icono || respaldo || '';
+  if (typeof v === 'string' && v.indexOf('svg:') === 0 && EPV.ICONOS_SVG[v.slice(4)]) {
+    return EPV.ICONOS_SVG[v.slice(4)];
+  }
+  return EPV.escaparHTML(v);
+};
 
 EPV.ORIGENES = {
   tabla81:    { es: 'Tabla 8-1 (OACI Doc 9284)',               en: 'Table 8-1 (ICAO Doc 9284)' },
@@ -91,8 +116,8 @@ EPV.SEMILLA = {
       bodega: 'prohibido',
       aprobacion: false,
       limite: {
-        es: 'Solo en cabina, hasta 100 Wh y máximo 2 por persona. No se pueden recargar a bordo.',
-        en: 'Cabin only, up to 100 Wh and no more than 2 per person. They may not be recharged on board.'
+        es: 'Solo en cabina, hasta 100 Wh y máximo 2 por persona. No se recargan a bordo y la aerolínea puede prohibirlos.',
+        en: 'Cabin only, up to 100 Wh and no more than 2 per person. No recharging on board, and the airline may forbid them.'
       },
       detalle: {
         es: [
@@ -101,7 +126,7 @@ EPV.SEMILLA = {
           'Deben ir en el equipaje de mano. Están prohibidos en el equipaje facturado (bodega).',
           'No deben recargarse mientras estén a bordo y no deberían usarse para recargar otros aparatos durante el vuelo.',
           'Cada uno debe ir protegido contra cortocircuitos cuando no se use: en su embalaje original, con cinta adhesiva sobre los bornes o en una bolsa o funda individual.',
-          'Las aerolíneas pueden prohibir su transporte: consulta con tu aerolínea antes de viajar.',
+          'Los explotadores aéreos pueden prohibir el transporte de estas baterías, bancos de energía o power bank, por lo que se recomienda tomar contacto con el operador aéreo antes de viajar.',
           'Para calcular los Wh: mAh × voltaje ÷ 1000 (ej.: 20.000 mAh a 3,7 V = 74 Wh).'
         ],
         en: [
@@ -110,7 +135,7 @@ EPV.SEMILLA = {
           'They must be carried in cabin baggage. They are forbidden in checked baggage.',
           'They must not be recharged while on board and should not be used to recharge other devices during the flight.',
           'Each one must be protected from short circuit when not in use: in its original retail packaging, with tape over the terminals, or in an individual bag or pouch.',
-          'Airlines may forbid their carriage: check with your airline before travelling.',
+          'Air operators may forbid the carriage of these batteries and power banks, so it is recommended to contact the airline before travelling.',
           'To calculate Wh: mAh × voltage ÷ 1000 (e.g. 20,000 mAh at 3.7 V = 74 Wh).'
         ]
       },
@@ -139,14 +164,14 @@ EPV.SEMILLA = {
           'Instalada en un aparato: preferentemente en cabina. Si va en bodega, el aparato debe ir completamente apagado y protegido contra daños.',
           'De repuesto: solo en equipaje de mano, máximo 2 por persona y cada una protegida contra cortocircuitos.',
           'Si es un banco de energía, además rigen sus reglas: máximo 2 por persona y sin recargarlo a bordo.',
-          'Las aerolíneas pueden prohibir su transporte.'
+          'Los explotadores aéreos pueden prohibir el transporte de estas baterías, bancos de energía o power bank, por lo que se recomienda tomar contacto con el operador aéreo antes de viajar.'
         ],
         en: [
           'Typical of professional equipment: video cameras, drones or high-performance laptops.',
           'Installed in a device: preferably in the cabin. If checked, the device must be completely switched off and protected from damage.',
           'As a spare: cabin baggage only, no more than 2 per person, each protected from short circuit.',
           'If it is a power bank, its own rules also apply: no more than 2 per person and no recharging on board.',
-          'Airlines may forbid their carriage.'
+          'Air operators may forbid the carriage of these batteries and power banks, so it is recommended to contact the airline before travelling.'
         ]
       },
       fuente: ref('1', 'c), e), f) y h)', 'c), e), f) and h)', true)
@@ -174,14 +199,14 @@ EPV.SEMILLA = {
           'Deben transportarse en el equipaje de mano. Están prohibidas en el equipaje facturado.',
           'No pueden transportarse más de 2 baterías de repuesto por persona.',
           'Deben ir individualmente protegidas: en su embalaje original, con cinta adhesiva sobre los bornes o en una bolsa plástica o funda protectora.',
-          'Las aerolíneas pueden prohibir su transporte.'
+          'Los explotadores aéreos pueden prohibir el transporte de estas baterías, bancos de energía o power bank, por lo que se recomienda tomar contacto con el operador aéreo antes de viajar.'
         ],
         en: [
           'Up to 100 Wh (lithium ion) or 2 g of lithium (lithium metal) per battery.',
           'They must be carried in cabin baggage. They are forbidden in checked baggage.',
           'No more than 2 spare batteries may be carried per person.',
           'Each must be individually protected: in its original retail packaging, with tape over the terminals, or in a plastic bag or protective pouch.',
-          'Airlines may forbid their carriage.'
+          'Air operators may forbid the carriage of these batteries and power banks, so it is recommended to contact the airline before travelling.'
         ]
       },
       fuente: {
@@ -212,14 +237,14 @@ EPV.SEMILLA = {
           'Toma medidas para evitar que se enciendan accidentalmente y protégelos contra daños.',
           'Deberían transportarse en el equipaje de mano.',
           'Si van en equipaje facturado deben ir completamente apagados, no en modo de reposo ni hibernación. La Tabla 8-1 asocia a este caso los criterios de 0,3 g de litio (metal litio) o 2,7 Wh (ion litio) por aparato: ante la duda, llévalos en cabina.',
-          'Las aerolíneas pueden prohibir su transporte.'
+          'Los explotadores aéreos pueden prohibir el transporte de estas baterías, bancos de energía o power bank, por lo que se recomienda tomar contacto con el operador aéreo antes de viajar.'
         ],
         en: [
           'Their batteries must not exceed 100 Wh (lithium ion) or 2 g of lithium (lithium metal).',
           'Take measures to prevent accidental activation and protect them from damage.',
           'They should be carried in cabin baggage.',
           'If checked, they must be completely switched off, not in sleep or hibernation mode. Table 8-1 links this case to criteria of 0.3 g of lithium (lithium metal) or 2.7 Wh (lithium ion) per device: if in doubt, carry them in the cabin.',
-          'Airlines may forbid their carriage.'
+          'Air operators may forbid the carriage of these batteries and power banks, so it is recommended to contact the airline before travelling.'
         ]
       },
       fuente: ref('1', 'b) y f)', 'b) and f)', true)
@@ -247,14 +272,14 @@ EPV.SEMILLA = {
           'Están prohibidos en el equipaje facturado.',
           'Sus baterías de litio deben cumplir los límites de 100 Wh o 2 g de litio, y las de repuesto deben ir protegidas contra cortocircuitos.',
           'Deben tomarse medidas para impedir la activación accidental del elemento calefactor.',
-          'El líquido de recarga sigue la regla de líquidos de 100 ml en cabina.'
+          'En vuelos a Estados Unidos, el líquido de recarga en cabina debe ir en envases de hasta 100 ml.'
         ],
         en: [
           'Includes electronic cigarettes and cigars, e-pipes, personal vaporisers and electronic nicotine delivery systems.',
           'They are forbidden in checked baggage.',
           'Their lithium batteries must meet the 100 Wh or 2 g lithium limits, and spares must be protected from short circuit.',
           'Measures must be taken to prevent accidental activation of the heating element.',
-          'Refill liquid follows the 100 ml cabin liquids rule.'
+          'On flights to the United States, cabin refill liquid must be in containers of up to 100 ml.'
         ]
       },
       fuente: ref('3', '', '', false)
@@ -457,26 +482,26 @@ EPV.SEMILLA = {
       origen: 'avsec',
       nombre: { es: 'Líquidos, geles y cremas (agua, shampoo, cremas, pasta dental)', en: 'Liquids, gels and creams (water, shampoo, lotions, toothpaste)' },
       claves: {
-        es: ['liquido', 'liquidos', 'gel', 'crema', 'shampoo', 'agua', 'jugo', 'pasta de dientes', 'maquillaje', 'bloqueador', '100 ml'],
-        en: ['liquid', 'liquids', 'gel', 'cream', 'lotion', 'shampoo', 'water', 'juice', 'toothpaste', 'makeup', 'sunscreen', '100 ml']
+        es: ['liquido', 'liquidos', 'gel', 'crema', 'shampoo', 'agua', 'jugo', 'pasta de dientes', 'maquillaje', 'bloqueador', '100 ml', 'estados unidos'],
+        en: ['liquid', 'liquids', 'gel', 'cream', 'lotion', 'shampoo', 'water', 'juice', 'toothpaste', 'makeup', 'sunscreen', '100 ml', 'united states', 'usa']
       },
-      mano: 'restringido',
+      mano: 'permitido',
       bodega: 'permitido',
       aprobacion: false,
       limite: {
-        es: 'En cabina: envases de hasta 100 ml, todos en una bolsa transparente de 1 litro.',
-        en: 'In the cabin: containers of up to 100 ml, all in one transparent 1-litre bag.'
+        es: 'Permitidos en cabina y bodega. En vuelos a Estados Unidos, en cabina solo envases de hasta 100 ml.',
+        en: 'Allowed in the cabin and in checked baggage. On flights to the United States, cabin containers of up to 100 ml only.'
       },
       detalle: {
         es: [
-          'Es una regla del control de seguridad, no de mercancías peligrosas.',
-          'Excepciones: medicamentos y alimentos para bebés en la cantidad necesaria para el viaje; pueden pedirte respaldo.',
-          'Las compras en tiendas libres de impuestos deben ir en bolsa sellada con su comprobante.'
+          'En vuelos con destino a Estados Unidos, los líquidos en cabina deben ir en envases de hasta 100 ml, todos dentro de una bolsa transparente de 1 litro.',
+          'En esos vuelos se exceptúan los medicamentos y alimentos para bebés en la cantidad necesaria para el viaje.',
+          'Los productos inflamables, los aerosoles y las bebidas alcohólicas tienen reglas propias: búscalos por separado.'
         ],
         en: [
-          'This is a security screening rule, not a dangerous goods rule.',
-          'Exceptions: medicines and baby food in the quantity needed for the trip; you may be asked for proof.',
-          'Duty-free purchases must be kept in a sealed bag with the receipt.'
+          'On flights to the United States, cabin liquids must be in containers of up to 100 ml, all inside one transparent 1-litre bag.',
+          'On those flights, medicines and baby food in the quantity needed for the trip are exempt.',
+          'Flammable products, aerosols and alcoholic beverages have their own rules: search for them separately.'
         ]
       },
       fuente: REF_AVSEC
@@ -495,21 +520,21 @@ EPV.SEMILLA = {
       bodega: 'restringido',
       aprobacion: false,
       limite: {
-        es: 'Cada envase hasta 0,5 kg o 0,5 L; en total 2 kg o 2 L por persona. En cabina, envases de hasta 100 ml.',
-        en: 'Each item up to 0.5 kg or 0.5 L; 2 kg or 2 L in total per person. In the cabin, containers of up to 100 ml.'
+        es: 'Cada envase hasta 0,5 kg o 0,5 L; en total 2 kg o 2 L por persona.',
+        en: 'Each item up to 0.5 kg or 0.5 L; 2 kg or 2 L in total per person.'
       },
       detalle: {
         es: [
           'Incluye artículos medicinales y de tocador (también en aerosol) y aerosoles de la División 2.2 sin peligro secundario.',
           'Las válvulas de los aerosoles deben ir protegidas con una tapa u otro medio que impida la liberación del contenido.',
           'Los aerosoles inflamables que no sean de tocador ni medicinales (pintura en spray, insecticida, lubricante) no están autorizados.',
-          'En cabina, además, aplica la regla de líquidos de 100 ml.'
+          'En vuelos a Estados Unidos, en cabina aplica además el límite de 100 ml por envase.'
         ],
         en: [
           'Includes medicinal and toilet articles (including aerosols) and Division 2.2 aerosols with no subsidiary hazard.',
           'Aerosol release valves must be protected by a cap or other means to prevent release of the contents.',
           'Flammable aerosols that are not toiletries or medicines (spray paint, insecticide, lubricant) are not permitted.',
-          'In the cabin, the 100 ml liquids rule also applies.'
+          'On flights to the United States, the 100 ml per container cabin limit also applies.'
         ]
       },
       fuente: ref('17', '', '', false)
@@ -528,19 +553,19 @@ EPV.SEMILLA = {
       bodega: 'restringido',
       aprobacion: false,
       limite: {
-        es: 'Máximo 5 litros por persona, en envases de venta al detalle. En cabina, envases de hasta 100 ml.',
-        en: 'Maximum 5 litres per person, in retail packaging. In the cabin, containers of up to 100 ml.'
+        es: 'Máximo 5 litros por persona, en envases de venta al detalle.',
+        en: 'Maximum 5 litres per person, in retail packaging.'
       },
       detalle: {
         es: [
           'Deben ir en embalajes de venta al detalle (envase comercial).',
           'Cantidad neta total: no más de 5 L por persona.',
-          'En cabina aplica la regla de líquidos de 100 ml; las compras en tiendas libres de impuestos siguen sus propias condiciones.'
+          'En vuelos a Estados Unidos, en cabina solo se permiten envases de hasta 100 ml o compras en tiendas libres de impuestos en bolsa sellada.'
         ],
         en: [
           'They must be in retail packaging.',
           'Total net quantity: no more than 5 L per person.',
-          'In the cabin the 100 ml liquids rule applies; duty-free purchases follow their own conditions.'
+          'On flights to the United States, only containers of up to 100 ml or duty-free purchases in a sealed bag are allowed in the cabin.'
         ]
       },
       fuente: ref('6', '', '', false)
@@ -555,22 +580,22 @@ EPV.SEMILLA = {
         es: ['vino', 'cerveza', 'chicha', 'espumante', 'sidra', 'alcohol'],
         en: ['wine', 'beer', 'sparkling wine', 'cider', 'alcohol']
       },
-      mano: 'restringido',
+      mano: 'permitido',
       bodega: 'permitido',
       aprobacion: false,
       limite: {
-        es: 'Sin restricción como mercancía peligrosa. En cabina, envases de hasta 100 ml.',
-        en: 'Not restricted as dangerous goods. In the cabin, containers of up to 100 ml.'
+        es: 'Sin restricción como mercancía peligrosa.',
+        en: 'Not restricted as dangerous goods.'
       },
       detalle: {
         es: [
           'La Tabla 8-1 indica que las bebidas con menos de 24% de alcohol no están sujetas a ninguna restricción.',
-          'En cabina aplica la regla de líquidos del control de seguridad.',
+          'En vuelos a Estados Unidos, en cabina solo envases de hasta 100 ml.',
           'Revisa las franquicias de aduana del país de destino.'
         ],
         en: [
           'Table 8-1 states that beverages under 24% alcohol are not subject to any restriction.',
-          'In the cabin the security screening liquids rule applies.',
+          'On flights to the United States, cabin containers of up to 100 ml only.',
           'Check the customs allowances of your destination country.'
         ]
       },
@@ -614,23 +639,25 @@ EPV.SEMILLA = {
       origen: 'avsec',
       nombre: { es: 'Cuchillos, navajas y cortaplumas', en: 'Knives, blades and pocket knives' },
       claves: {
-        es: ['cuchillo', 'navaja', 'cortaplumas', 'machete', 'multiherramienta', 'cuchillo cocina'],
-        en: ['knife', 'blade', 'pocket knife', 'penknife', 'machete', 'multitool']
+        es: ['cuchillo', 'navaja', 'cortaplumas', 'machete', 'multiherramienta', 'cuchillo cocina', 'cortopunzante', 'hoja'],
+        en: ['knife', 'blade', 'pocket knife', 'penknife', 'machete', 'multitool', 'sharp object']
       },
-      mano: 'prohibido',
+      mano: 'restringido',
       bodega: 'permitido',
       aprobacion: false,
       limite: {
-        es: 'Nunca en cabina. En bodega, bien envueltos.',
-        en: 'Never in the cabin. In checked baggage, well wrapped.'
+        es: 'En cabina solo con hojas de hasta 4 cm. Si la hoja supera los 4 cm, va en bodega y bien envuelta.',
+        en: 'In the cabin only with blades up to 4 cm. Blades over 4 cm go in checked baggage, well wrapped.'
       },
       detalle: {
         es: [
-          'Envuélvelos para que no hieran a quien revise el equipaje.',
+          'Se prohíben en cabina los objetos cortopunzantes con hojas de longitud superior a 4 cm.',
+          'En bodega, envuélvelos para que no hieran a quien revise el equipaje.',
           'La decisión final en el control la toma el personal de seguridad.'
         ],
         en: [
-          'Wrap them so they cannot injure baggage screeners.',
+          'Sharp objects with blades longer than 4 cm are forbidden in the cabin.',
+          'In checked baggage, wrap them so they cannot injure baggage screeners.',
           'The final decision at screening rests with security staff.'
         ]
       },
@@ -673,8 +700,8 @@ EPV.SEMILLA = {
       bodega: 'permitido',
       aprobacion: false,
       limite: {
-        es: 'En cabina solo con hojas de hasta 6 cm. Las más grandes, en bodega.',
-        en: 'In the cabin only with blades up to 6 cm. Larger ones in checked baggage.'
+        es: 'En cabina solo con hojas de hasta 4 cm. Las más grandes, en bodega.',
+        en: 'In the cabin only with blades up to 4 cm. Larger ones in checked baggage.'
       },
       detalle: {
         es: ['La hoja se mide desde el punto de unión (eje) hasta la punta.'],
@@ -687,27 +714,77 @@ EPV.SEMILLA = {
       categoria: 'cortopunzantes',
       icono: '🔧',
       origen: 'avsec',
-      nombre: { es: 'Herramientas (destornilladores, llaves, alicates, martillos)', en: 'Tools (screwdrivers, wrenches, pliers, hammers)' },
+      nombre: { es: 'Herramientas (brocas, alicates de punta, martillos, llaves inglesas, destornilladores)', en: 'Tools (drill bits, needle-nose pliers, hammers, adjustable wrenches, screwdrivers)' },
       claves: {
-        es: ['herramienta', 'destornillador', 'llave', 'alicate', 'martillo', 'taladro', 'sierra', 'napoleon', 'barreta'],
-        en: ['tool', 'screwdriver', 'wrench', 'spanner', 'pliers', 'hammer', 'drill', 'saw', 'crowbar']
+        es: ['herramienta', 'broca', 'alicate', 'alicate de punta', 'martillo', 'llave inglesa', 'llave', 'destornillador', 'destornillador de precision', 'taladro'],
+        en: ['tool', 'drill bit', 'pliers', 'needle-nose pliers', 'hammer', 'adjustable wrench', 'wrench', 'spanner', 'screwdriver', 'precision screwdriver', 'drill']
+      },
+      mano: 'prohibido',
+      bodega: 'permitido',
+      aprobacion: false,
+      limite: {
+        es: 'Prohibidas en cabina: van en bodega. Se exceptúan los destornilladores de precisión de menor tamaño.',
+        en: 'Forbidden in the cabin: pack them in checked baggage. Small precision screwdrivers are excepted.'
+      },
+      detalle: {
+        es: [
+          'Prohibidos en cabina: brocas, alicates con punta, martillos, llaves inglesas y destornilladores.',
+          'Excepción: los destornilladores de precisión de menor tamaño pueden ir en cabina.',
+          'La decisión final la toma el personal de seguridad en el control.',
+          'Si la herramienta es a batería, la batería de repuesto va en cabina y protegida contra cortocircuitos.'
+        ],
+        en: [
+          'Forbidden in the cabin: drill bits, needle-nose pliers, hammers, adjustable wrenches and screwdrivers.',
+          'Exception: small precision screwdrivers may be carried in the cabin.',
+          'The final decision rests with security staff at screening.',
+          'If the tool is battery-powered, the spare battery goes in the cabin, protected from short circuit.'
+        ]
+      },
+      fuente: REF_AVSEC
+    },
+    {
+      id: 'palillos-tejer',
+      categoria: 'cortopunzantes',
+      icono: '🧶',
+      origen: 'avsec',
+      nombre: { es: 'Palillos para tejer', en: 'Knitting needles' },
+      claves: {
+        es: ['palillos', 'palillos para tejer', 'agujas de tejer', 'crochet', 'tejido', 'lana'],
+        en: ['knitting needles', 'needles', 'crochet', 'knitting', 'yarn']
       },
       mano: 'restringido',
       bodega: 'permitido',
       aprobacion: false,
       limite: {
-        es: 'En cabina solo herramientas de hasta 6 cm. Martillos, taladros, sierras y barretas, siempre en bodega.',
-        en: 'In the cabin only tools up to 6 cm. Hammers, drills, saws and crowbars always in checked baggage.'
+        es: 'En cabina solo de hasta 15 cm. Los más largos, en bodega.',
+        en: 'In the cabin only up to 15 cm. Longer ones in checked baggage.'
       },
       detalle: {
-        es: [
-          'La decisión final la toma el personal de seguridad en el control.',
-          'Si la herramienta es a batería, la batería de repuesto va en cabina y protegida contra cortocircuitos.'
-        ],
-        en: [
-          'The final decision rests with security staff at screening.',
-          'If the tool is battery-powered, the spare battery goes in the cabin, protected from short circuit.'
-        ]
+        es: ['Se prohíben en cabina los palillos para tejer que superen los 15 cm de largo.'],
+        en: ['Knitting needles longer than 15 cm are forbidden in the cabin.']
+      },
+      fuente: REF_AVSEC
+    },
+    {
+      id: 'pie-de-metro',
+      categoria: 'cortopunzantes',
+      icono: '📏',
+      origen: 'avsec',
+      nombre: { es: 'Pie de metro (calibrador)', en: 'Vernier caliper' },
+      claves: {
+        es: ['pie de metro', 'calibrador', 'vernier', 'pie de rey', 'instrumento de medicion'],
+        en: ['caliper', 'vernier caliper', 'measuring tool']
+      },
+      mano: 'restringido',
+      bodega: 'permitido',
+      aprobacion: false,
+      limite: {
+        es: 'En cabina solo de hasta 20 cm. Los más largos, en bodega.',
+        en: 'In the cabin only up to 20 cm. Longer ones in checked baggage.'
+      },
+      detalle: {
+        es: ['Se prohíbe en cabina el pie de metro de longitud superior a 20 cm.'],
+        en: ['Calipers longer than 20 cm are forbidden in the cabin.']
       },
       fuente: REF_AVSEC
     },
@@ -727,17 +804,19 @@ EPV.SEMILLA = {
       bodega: 'restringido',
       aprobacion: true,
       limite: {
-        es: 'Solo en bodega, bien embaladas, máximo 5 kg por persona y con aprobación de la aerolínea.',
-        en: 'Checked baggage only, securely packed, maximum 5 kg per person and with airline approval.'
+        es: 'Solo en bodega, bien embaladas, máximo 5 kg por persona, con aprobación de la aerolínea y la documentación necesaria para su traslado.',
+        en: 'Checked baggage only, securely packed, maximum 5 kg per person, with airline approval and the documentation required for transport.'
       },
       detalle: {
         es: [
+          'Debes contar con la documentación necesaria para su traslado.',
           'Solo cartuchos ONU 0012 u ONU 0014 (División 1.4S).',
           'Máximo 5 kg de masa bruta por persona.',
           'No se permiten municiones con proyectiles explosivos o incendiarios.',
           'Las cantidades de varias personas no pueden combinarse en uno o más bultos.'
         ],
         en: [
+          'You must have the documentation required for their transport.',
           'Only cartridges UN 0012 or UN 0014 (Division 1.4S).',
           'Maximum 5 kg gross mass per person.',
           'Ammunition with explosive or incendiary projectiles is not allowed.',
@@ -749,7 +828,7 @@ EPV.SEMILLA = {
     {
       id: 'armas-fuego',
       categoria: 'armas',
-      icono: '🔫',
+      icono: 'svg:arma-fuego',
       origen: 'avsec',
       nombre: { es: 'Armas de fuego', en: 'Firearms' },
       claves: {
@@ -780,7 +859,7 @@ EPV.SEMILLA = {
     {
       id: 'gas-pimienta',
       categoria: 'armas',
-      icono: '🧯',
+      icono: 'svg:spray-defensa',
       origen: 'no_listado',
       nombre: { es: 'Gas pimienta y sprays de defensa personal', en: 'Pepper spray and self-defence sprays' },
       claves: {
@@ -972,17 +1051,19 @@ EPV.SEMILLA = {
       bodega: 'permitido',
       aprobacion: false,
       limite: {
-        es: 'Permitidos. Los líquidos pueden superar los 100 ml en la cantidad necesaria para el viaje.',
-        en: 'Allowed. Liquids may exceed 100 ml in the quantity needed for the trip.'
+        es: 'Permitidos en cabina y bodega. Lleva los de uso diario contigo.',
+        en: 'Allowed in the cabin and in checked baggage. Keep daily-use medicines with you.'
       },
       detalle: {
         es: [
-          'Lleva los de uso diario en cabina y, si es posible, con receta o respaldo médico.',
-          'Los medicamentos en aerosol siguen el límite de 0,5 kg o 0,5 L por envase y 2 kg o 2 L en total (Tabla 8-1, ítem 17).'
+          'Si es posible, lleva la receta o un respaldo médico.',
+          'Los medicamentos en aerosol siguen el límite de 0,5 kg o 0,5 L por envase y 2 kg o 2 L en total (Tabla 8-1, ítem 17).',
+          'En vuelos a Estados Unidos, los medicamentos líquidos pueden superar los 100 ml en la cantidad necesaria para el viaje; pueden pedirte presentarlos por separado.'
         ],
         en: [
-          'Keep daily-use medicines in the cabin and, if possible, carry a prescription or medical note.',
-          'Medicinal aerosols follow the limit of 0.5 kg or 0.5 L per item and 2 kg or 2 L in total (Table 8-1, item 17).'
+          'If possible, carry the prescription or a medical note.',
+          'Medicinal aerosols follow the limit of 0.5 kg or 0.5 L per item and 2 kg or 2 L in total (Table 8-1, item 17).',
+          'On flights to the United States, liquid medicines may exceed 100 ml in the quantity needed for the trip; you may be asked to present them separately.'
         ]
       },
       fuente: REF_AVSEC
@@ -1196,16 +1277,16 @@ EPV.SEMILLA = {
         es: ['mermelada', 'manjar', 'yogur', 'salsa', 'miel', 'sopa', 'conserva'],
         en: ['jam', 'dulce de leche', 'yoghurt', 'yogurt', 'sauce', 'honey', 'soup', 'preserves']
       },
-      mano: 'restringido',
+      mano: 'permitido',
       bodega: 'permitido',
       aprobacion: false,
       limite: {
-        es: 'En cabina, envases de hasta 100 ml en la bolsa de 1 litro. En bodega, sin ese límite.',
-        en: 'In the cabin, containers of up to 100 ml in the 1-litre bag. No such limit in checked baggage.'
+        es: 'Permitidos en cabina y bodega. En vuelos a Estados Unidos, en cabina solo envases de hasta 100 ml.',
+        en: 'Allowed in the cabin and in checked baggage. On flights to the United States, cabin containers of up to 100 ml only.'
       },
       detalle: {
-        es: ['Se consideran líquidos para el control de seguridad.'],
-        en: ['They are treated as liquids at security screening.']
+        es: ['En vuelos a Estados Unidos se consideran líquidos y deben ir en la bolsa transparente de 1 litro.'],
+        en: ['On flights to the United States they count as liquids and must go in the transparent 1-litre bag.']
       },
       fuente: REF_AVSEC
     },
@@ -1219,16 +1300,16 @@ EPV.SEMILLA = {
         es: ['leche', 'mamadera', 'papilla', 'bebe', 'formula', 'compota'],
         en: ['milk', 'baby bottle', 'baby food', 'formula', 'infant']
       },
-      mano: 'restringido',
+      mano: 'permitido',
       bodega: 'permitido',
       aprobacion: false,
       limite: {
-        es: 'En cabina se permiten en la cantidad necesaria para el viaje, aunque superen 100 ml.',
-        en: 'Allowed in the cabin in the quantity needed for the trip, even above 100 ml.'
+        es: 'Permitidos en cabina y bodega, en la cantidad necesaria para el viaje.',
+        en: 'Allowed in the cabin and in checked baggage, in the quantity needed for the trip.'
       },
       detalle: {
-        es: ['Pueden pedirte mostrarlos por separado en el control de seguridad.'],
-        en: ['You may be asked to present them separately at security screening.']
+        es: ['Pueden pedirte mostrarlos por separado en el control de seguridad.', 'En vuelos a Estados Unidos pueden superar los 100 ml, en la cantidad necesaria para el viaje.'],
+        en: ['You may be asked to present them separately at security screening.', 'On flights to the United States they may exceed 100 ml, in the quantity needed for the trip.']
       },
       fuente: REF_AVSEC
     },
@@ -1268,10 +1349,10 @@ EPV.SEMILLA = {
       categoria: 'deportivos',
       icono: '🏏',
       origen: 'avsec',
-      nombre: { es: 'Bates, palos de golf o hockey y equipo de artes marciales', en: 'Bats, golf or hockey sticks and martial arts equipment' },
+      nombre: { es: 'Bates, palos de golf o hockey y bastones', en: 'Bats, golf or hockey sticks and batons' },
       claves: {
-        es: ['bate', 'palo de golf', 'palo de hockey', 'artes marciales', 'nunchaku', 'baston'],
-        en: ['bat', 'golf club', 'hockey stick', 'martial arts', 'nunchaku', 'baton']
+        es: ['bate', 'palo de golf', 'palo de hockey', 'baston', 'luma'],
+        en: ['bat', 'golf club', 'hockey stick', 'baton', 'club']
       },
       mano: 'prohibido',
       bodega: 'permitido',
@@ -1285,6 +1366,38 @@ EPV.SEMILLA = {
         en: ['Check with your airline for oversized sports equipment conditions.']
       },
       fuente: REF_AVSEC
+    },
+    {
+      id: 'artes-marciales',
+      categoria: 'deportivos',
+      icono: '🥋',
+      origen: 'avsec',
+      nombre: { es: 'Equipos de artes marciales', en: 'Martial arts equipment' },
+      claves: {
+        es: ['artes marciales', 'nunchaku', 'linchaco', 'tonfa', 'shuriken', 'sai', 'bo', 'karate', 'kung fu', 'ley 18.356'],
+        en: ['martial arts', 'nunchaku', 'nunchucks', 'tonfa', 'shuriken', 'throwing star', 'sai', 'bo staff', 'karate', 'kung fu']
+      },
+      mano: 'prohibido',
+      bodega: 'restringido',
+      aprobacion: false,
+      limite: {
+        es: 'Prohibidos en cabina los elementos regulados por la Ley N° 18.356 sobre control de las artes marciales.',
+        en: 'Items regulated by Chilean Law No. 18,356 on the control of martial arts are forbidden in the cabin.'
+      },
+      detalle: {
+        es: [
+          'Aplica a los elementos considerados en la Ley N° 18.356 sobre control de las artes marciales.',
+          'Para llevarlos en bodega, revisa los requisitos de esa ley y consulta con tu aerolínea.'
+        ],
+        en: [
+          'Applies to the items covered by Chilean Law No. 18,356 on the control of martial arts.',
+          'To carry them in checked baggage, check the requirements of that law and consult your airline.'
+        ]
+      },
+      fuente: {
+        es: 'Seguridad de la aviación (AVSEC), DGAC, y Ley N° 18.356 sobre control de las artes marciales.',
+        en: 'Aviation security (AVSEC), DGAC, and Chilean Law No. 18,356 on the control of martial arts.'
+      }
     },
     {
       id: 'cartuchos-co2',

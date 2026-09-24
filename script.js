@@ -315,7 +315,7 @@
 
     return '<li><article class="tarjeta" aria-labelledby="' + idT + '">' +
       '<div class="flex items-start gap-3">' +
-        '<span class="tarjeta-icono" aria-hidden="true">' + esc(el.icono || cat.icono) + '</span>' +
+        '<span class="tarjeta-icono" aria-hidden="true">' + EPV.iconoHTML(el.icono, cat.icono) + '</span>' +
         '<div class="min-w-0">' +
           '<h2 id="' + idT + '" class="tarjeta-titulo">' + esc(el.nombre[L]) + '</h2>' +
           '<p class="tarjeta-categoria">' + esc(cat[L]) + '</p>' +

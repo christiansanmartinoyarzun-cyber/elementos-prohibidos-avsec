@@ -139,8 +139,13 @@
             <label class="campo-etiqueta">Categoría
               <select id="f_categoria" class="campo" required></select>
             </label>
-            <label class="campo-etiqueta">Ícono (emoji)
-              <input id="f_icono" class="campo" maxlength="8" placeholder="🔋">
+            <label class="campo-etiqueta">Ícono (emoji o ícono propio)
+              <input id="f_icono" class="campo" maxlength="30" placeholder="🔋" list="iconosPropios">
+              <span class="campo-ayuda">Íconos propios: svg:arma-fuego · svg:spray-defensa</span>
+              <datalist id="iconosPropios">
+                <option value="svg:arma-fuego"></option>
+                <option value="svg:spray-defensa"></option>
+              </datalist>
             </label>
             <label class="campo-etiqueta">Origen normativo
               <select id="f_origen" class="campo">
